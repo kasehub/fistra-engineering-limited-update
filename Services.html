@@ -1,0 +1,1314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Services - FiSTra Engineering Limited</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Global Styles */
+        :root {
+            --primary: #1a5276;
+            --secondary: #2e86c1;
+            --accent: #e74c3c;
+            --light: #f8f9fa;
+            --dark: #2c3e50;
+            --gray: #7f8c8d;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #fff;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background-color: var(--accent);
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+        
+        .btn:hover {
+            background-color: #c0392b;
+            transform: translateY(-2px);
+        }
+        
+        .btn-outline {
+            background-color: transparent;
+            border: 2px solid var(--primary);
+            color: var(--primary);
+        }
+        
+        .btn-outline:hover {
+            background-color: var(--primary);
+            color: white;
+        }
+        
+        section {
+            padding: 80px 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+            color: var(--primary);
+        }
+        
+        .section-title h2 {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background-color: var(--accent);
+        }
+        
+        .section-title p {
+            font-size: 1.1rem;
+            color: var(--gray);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        /* Header & Navigation */
+header {
+    background-color: white;
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 0;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo h1 {
+    font-size: 1.8rem;
+    color: var(--primary);
+    font-weight: 700;
+}
+
+.logo span {
+    color: var(--accent);
+}
+
+.menu-toggle {
+    display: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    position: relative;
+    z-index: 1001;
+    width: 30px;
+    height: 30px;
+}
+
+.menu-toggle .fa-times {
+    display: none;
+}
+
+.menu-toggle.active .fa-bars {
+    display: none;
+}
+
+.menu-toggle.active .fa-times {
+    display: block;
+}
+
+nav {
+    transition: all 0.3s ease;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+}
+
+nav ul li {
+    margin-left: 30px;
+    position: relative;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: var(--dark);
+    font-weight: 600;
+    font-size: 1rem;
+    transition: color 0.3s ease;
+    position: relative;
+    padding: 5px 0;
+}
+
+nav ul li a.contact-nav-btn {
+    background-color: var(--accent);
+    color: white;
+    padding: 8px 20px;
+    border-radius: 4px;
+}
+
+nav ul li a.contact-nav-btn:hover {
+    background-color: #c0392b;
+}
+
+nav ul li a.contact-nav-btn::after {
+    display: none;
+}
+
+nav ul li a:hover {
+    color: var(--accent);
+}
+
+nav ul li a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--accent);
+    transition: width 0.3s ease;
+}
+
+nav ul li a:hover::after {
+    width: 100%;
+}
+        
+        /* Page Header */
+        .page-header {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc?ixlib=rb-4.0.3&auto=format&fit=crop&w=1500&q=80') no-repeat center center/cover;
+            color: white;
+            text-align: center;
+            padding: 100px 0;
+        }
+        
+        .page-header h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+        
+        .breadcrumb {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+        }
+        
+        .breadcrumb li {
+            margin: 0 10px;
+        }
+        
+        .breadcrumb li a {
+            color: white;
+            text-decoration: none;
+        }
+        
+        .breadcrumb li::after {
+            content: '>';
+            margin-left: 10px;
+            color: var(--accent);
+        }
+        
+        .breadcrumb li:last-child::after {
+            content: '';
+        }
+        
+        /* Services Grid */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+        }
+        
+        .service-card {
+            background-color: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .service-icon {
+            background-color: var(--primary);
+            color: white;
+            font-size: 2.5rem;
+            padding: 30px;
+            text-align: center;
+        }
+        
+        .service-content {
+            padding: 25px;
+        }
+        
+        .service-content h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: var(--primary);
+        }
+        
+        .service-features {
+            list-style: none;
+            margin: 20px 0;
+        }
+        
+        .service-features li {
+            margin-bottom: 10px;
+            padding-left: 25px;
+            position: relative;
+        }
+        
+        .service-features li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--accent);
+            font-weight: bold;
+        }
+        
+        /* Service Detail Sections */
+        .service-detail {
+            margin-top: 80px;
+        }
+        
+        .service-detail-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+        
+        .service-detail-image {
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .service-detail-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        
+        .service-detail-text h2 {
+            font-size: 2.2rem;
+            margin-bottom: 20px;
+            color: var(--primary);
+        }
+        
+        .service-detail-text p {
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+        }
+        
+        /* Process Section */
+        .process-steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            counter-reset: step-counter;
+        }
+        
+        .process-step {
+            text-align: center;
+            padding: 30px;
+            position: relative;
+        }
+        
+        .process-step::before {
+            counter-increment: step-counter;
+            content: counter(step-counter);
+            position: absolute;
+            top: -20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 40px;
+            height: 40px;
+            background-color: var(--accent);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+        }
+        
+        .process-step i {
+            font-size: 3rem;
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+        
+        .process-step h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+        }
+        
+        /* CTA Section */
+        .cta {
+            background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url('assets/contact.jpg') no-repeat center center/cover;
+            color: white;
+            text-align: center;
+            padding: 100px 0;
+        }
+        
+        .cta h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+        
+        .cta p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        /* Projects Filter */
+        .projects-filter {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-bottom: 40px;
+        }
+        
+        .filter-btn {
+            padding: 8px 20px;
+            background-color: white;
+            border: 1px solid var(--primary);
+            border-radius: 30px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .filter-btn:hover, .filter-btn.active {
+            background-color: var(--primary);
+            color: white;
+        }
+        
+        /* Projects Grid */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 30px;
+        }
+        
+        .project-card {
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+            background-color: white;
+        }
+        
+        .project-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .project-image {
+            height: 250px;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .project-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .project-card:hover .project-image img {
+            transform: scale(1.1);
+        }
+        
+        .project-category {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background-color: var(--accent);
+            color: white;
+            padding: 5px 15px;
+            border-radius: 30px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+        
+        .project-content {
+            padding: 25px;
+        }
+        
+        .project-content h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: var(--primary);
+        }
+        
+        .project-meta {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 15px;
+            font-size: 0.9rem;
+            color: var(--gray);
+        }
+        
+        .project-content p {
+            margin-bottom: 20px;
+        }
+        
+        /* Project Detail Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            z-index: 1001;
+            overflow-y: auto;
+            padding: 50px 20px;
+        }
+        
+        .modal-content {
+            background-color: white;
+            max-width: 900px;
+            margin: 0 auto;
+            border-radius: 8px;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .close-modal {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-size: 1.5rem;
+            color: white;
+            background-color: var(--accent);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            z-index: 10;
+        }
+        
+        .modal-image {
+            height: 400px;
+            overflow: hidden;
+        }
+        
+        .modal-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .modal-body {
+            padding: 30px;
+        }
+        
+        .modal-body h2 {
+            font-size: 2rem;
+            margin-bottom: 15px;
+            color: var(--primary);
+        }
+        
+        .modal-meta {
+            display: flex;
+            gap: 20px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+        
+        .modal-meta div {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .modal-meta i {
+            color: var(--accent);
+        }
+        
+        /* Stats Section */
+        .stats {
+            background-color: var(--primary);
+            color: white;
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+        }
+        
+        .stat-item {
+            text-align: center;
+            padding: 30px;
+        }
+        
+        .stat-item i {
+            font-size: 3rem;
+            color: var(--accent);
+            margin-bottom: 20px;
+        }
+        
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--dark);
+            color: white;
+            padding: 60px 0 30px;
+        }
+        
+        .footer-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        
+        .footer-col h3 {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+        
+        .footer-col h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 2px;
+            background-color: var(--accent);
+        }
+        
+        .footer-col p {
+            margin-bottom: 20px;
+        }
+        
+        .footer-links {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 12px;
+        }
+        
+        .footer-links a {
+            color: #ddd;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .footer-links a:hover {
+            color: var(--accent);
+            padding-left: 5px;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 15px;
+        }
+        
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.1);
+            color: white;
+            border-radius: 50%;
+            transition: all 0.3s ease;
+        }
+        
+        .social-links a:hover {
+            background-color: var(--accent);
+            transform: translateY(-3px);
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            .service-detail-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .service-detail-image {
+                order: -1;
+            }
+            
+            .projects-grid {
+                grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .menu-toggle {
+                display: block;
+            }
+            
+            nav {
+                position: fixed;
+                top: 0;
+                left: -100%;
+                width: 50%;
+                height: 100vh;
+                background-color: rgba(255, 255, 255, 0.98);
+                flex-direction: column;
+                transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+                box-shadow: none;
+                z-index: 1000;
+                padding-top: 80px;
+                backdrop-filter: blur(10px);
+                -webkit-backdrop-filter: blur(10px);
+            }
+            
+            nav.active {
+                left: 0;
+                box-shadow: 0 0 30px rgba(0, 0, 0, 0.1);
+            }
+            
+            nav ul {
+                flex-direction: column;
+                width: 100%;
+                padding: 0 20px;
+            }
+            
+            nav ul li {
+                margin: 0;
+                width: 100%;
+                text-align: left;
+                opacity: 0;
+                transform: translateX(-20px);
+                transition: all 0.3s ease;
+                transition-delay: calc(0.1s * var(--i));
+            }
+            
+            nav.active ul li {
+                opacity: 1;
+                transform: translateX(0);
+            }
+            
+            nav ul li a {
+                display: block;
+                padding: 15px 0;
+                border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+                font-size: 1.1rem;
+                color: var(--dark);
+            }
+            
+            nav ul li a.contact-nav-btn {
+                margin-top: 10px;
+                text-align: center;
+                background-color: var(--accent);
+                color: white;
+                border-radius: 4px;
+                border: none;
+            }
+            
+            nav ul li a::after {
+                display: none;
+            }
+            
+            .header-container {
+                padding: 15px 0;
+                position: relative;
+            }
+            
+            .logo h1 {
+                font-size: 1.5rem;
+            }
+            
+            .page-header h1 {
+                font-size: 2.5rem;
+            }
+            
+            .section-title h2 {
+                font-size: 2rem;
+            }
+            
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .modal-image {
+                height: 300px;
+            }
+        }
+        /* Tablet Navigation */
+@media (max-width: 992px) and (min-width: 769px) {
+    nav ul li {
+    margin-left: 20px;
+    }
+    
+    nav ul li a {
+    font-size: 0.9rem;
+    }
+    
+    .logo h1 {
+    font-size: 1.6rem;
+    }
+    }
+    
+    /* Prevent body scroll when menu is open */
+    body.menu-open {
+    overflow: hidden;
+    }
+    
+    /* Overlay for mobile menu */
+    .menu-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+    }
+    
+    body.menu-open .menu-overlay {
+    display: block;
+    }
+    </style>
+</head>
+<body>
+    <!-- Header & Navigation -->
+    <header>
+        <div class="container header-container">
+            <div class="logo">
+                <h1>FiSTra<span> Engineering</span> Ltd.</h1>
+            </div>
+            <div class="menu-toggle" id="menu-toggle">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-times"></i>
+            </div>
+            <nav id="nav">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="Services.html">Services</a></li>
+                    <li><a href="Projects.html">Projects</a></li>
+                    <li><a href="About.html">About</a></li>
+                    <li><a href="Blog.html">Blog</a></li>
+                    <li><a href="Contact.html" class="contact-nav-btn">Contact Us</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>Our Services</h1>
+            <ul class="breadcrumb">
+                <li><a href="index.html">Home</a></li>
+                <li>Services</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Services Overview -->
+    <section class="services">
+        <div class="container">
+            <div class="section-title">
+                <h2>Comprehensive Engineering Solutions</h2>
+                <p>We offer specialized engineering services with a focus on structural integrity and fire safety</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-building"></i>
+                    </div>
+                    <div class="service-content">
+                        <h3>Structural Engineering</h3>
+                        <p>Comprehensive structural analysis and design services for buildings, bridges, and special structures.</p>
+                        <ul class="service-features">
+                            <li>Structural design and analysis for new structures (buildings, bridges, industrial and residential facilities).</li>
+                            <li>Retrofitting and rehabilitation
+                                of existing structures</li>
+                            <li>Feasibility studies.</li>
+                            <li>Condition assessments of
+                                existing structures</li>
+                            <li>Expert reports and
+                                proof checks.</li>
+                        </ul>
+                        <a href="#structural" class="btn btn-outline">Learn More</a>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-fire-extinguisher"></i>
+                    </div>
+                    <div class="service-content">
+                        <h3>Fire Engineering</h3>
+                        <p>Advanced fire safety solutions including risk assessment and fire-resistant design.</p>
+                        <ul class="service-features">
+                            <li>Fire Safety Design (passive & active systems)</li>
+                            <li>Fire Risk Assessment & safety audits</li>
+                            <li>Evacuation Modelling & Planning</li>
+                            <li>Fire Suppression & Detection Systems</li>
+                            <li>Training & Capacity Building</li>
+                        </ul>
+                        <a href="#fire" class="btn btn-outline">Learn More</a>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-cogs"></i>
+                    </div>
+                    <div class="service-content">
+                        <h3>Multi-Disciplinary Engineering</h3>
+                        <p>Comprehensive engineering solutions across multiple disciplines.</p>
+                        <ul class="service-features">
+                            <li>Civil Engineering - infrastructure planning</li>
+                            <li>Mechanical Engineering - HVAC & systems</li>
+                            <li>Electrical Engineering - fire-safe systems</li>
+                            <li>Chemical Engineering - process safety</li>
+                            <li>Project Management & Supervision</li>
+                        </ul>
+                        <a href="#multidisciplinary" class="btn btn-outline">Learn More</a>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-search"></i>
+                    </div>
+                    <div class="service-content">
+                        <h3>Forensic Engineering</h3>
+                        <p>Expert investigation and analysis of structural failures and fire incidents.</p>
+                        <ul class="service-features">
+                            <li>Structural failure analysis</li>
+                            <li>Fire incident investigation</li>
+                            <li>Expert witness services</li>
+                            <li>Safety compliance audits</li>
+                            <li>Failure prevention strategies</li>
+                        </ul>
+                        <a href="#forensic" class="btn btn-outline">Learn More</a>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-lightbulb"></i>
+                    </div>
+                    <div class="service-content">
+                        <h3>Research & Development</h3>
+                        <p>Innovative research in structural and fire engineering to develop new solutions.</p>
+                        <ul class="service-features">
+                            <li>Research proposal writing</li>
+                            <li>Research supervision</li>
+                            <li>Thesis and dissertation guidance</li>
+                            <li>Engineering input for research</li>
+                            <li>Industry-academia collaboration</li>
+                        </ul>
+                        <a href="#research" class="btn btn-outline">Learn More</a>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-clipboard-check"></i>
+                    </div>
+                    <div class="service-content">
+                        <h3>Consulting & Training</h3>
+                        <p>Professional consulting and capacity building services.</p>
+                        <ul class="service-features">
+                            <li>Technical consulting</li>
+                            <li>Training programs</li>
+                            <li>Capacity building</li>
+                            <li>Code compliance</li>
+                            <li>Technical audits</li>
+                        </ul>
+                        <a href="#consulting" class="btn btn-outline">Learn More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Structural Engineering Detail -->
+    <section class="service-detail" id="structural">
+        <div class="container">
+            <div class="service-detail-content">
+                <div class="service-detail-text">
+                    <h2>Structural Engineering</h2>
+                    <p>Our structural engineering services encompass the complete lifecycle of structures, from conceptual design to construction oversight and maintenance planning. We combine technical expertise with practical experience to deliver safe, efficient, and innovative structural solutions.</p>
+                    <p>We specialize in both traditional and complex structures, utilizing the latest software and analysis techniques to ensure structural integrity and optimal performance.</p>
+                    <h3>Key Services:</h3>
+                    <ul class="service-features">
+                        <li>Structural analysis and design for new structures</li>
+                        <li>Retrofitting and rehabilitation of existing structures</li>
+                        <li>Feasibility studies and condition assessments</li>
+                        <li>Expert reports and proof checks</li>
+                        <li>Building Information Modelling (BIM)</li>
+                        <li>Construction documentation and oversight</li>
+                    </ul>
+                    <a href="Contact.html" class="btn">Request a Consultation</a>
+                </div>
+                <div class="service-detail-image">
+                    <img src="assets/3.jpg" alt="Structural Engineering">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Fire Engineering Detail -->
+    <section class="service-detail" id="fire">
+        <div class="container">
+            <div class="service-detail-content">
+                <div class="service-detail-image">
+                    <img src="assets/66.jpg" alt="Fire Engineering">
+                </div>
+                <div class="service-detail-text">
+                    <h2>Fire Engineering</h2>
+                    <p>Our fire engineering services focus on protecting people, property, and the environment from the devastating effects of fire. We employ performance-based design approaches that go beyond prescriptive code requirements to create innovative and effective fire safety solutions.</p>
+                    <p>With expertise in fire dynamics, human behavior, and building systems, we develop comprehensive fire safety strategies tailored to each project's unique requirements.</p>
+                    <h3>Key Services:</h3>
+                    <ul class="service-features">
+                        <li>Fire Safety Design - passive and active protection systems</li>
+                        <li>Fire Risk Assessment - hazard identification and safety audits</li>
+                        <li>Evacuation Modelling & Planning - simulation of people movement</li>
+                        <li>Fire Suppression & Detection Systems design</li>
+                        <li>Performance-based design approaches</li>
+                        <li>Training & Capacity Building in Fire Safety</li>
+                    </ul>
+                    <a href="Contact.html" class="btn">Discuss Your Project</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process Section -->
+    <section class="process">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Process</h2>
+                <p>How we deliver exceptional engineering solutions</p>
+            </div>
+            <div class="process-steps">
+                <div class="process-step">
+                    <i class="fas fa-clipboard-list"></i>
+                    <h3>Consultation</h3>
+                    <p>We begin by understanding your project requirements, challenges, and goals through detailed discussions.</p>
+                </div>
+                <div class="process-step">
+                    <i class="fas fa-search"></i>
+                    <h3>Analysis</h3>
+                    <p>Our experts conduct thorough analysis using advanced tools and methodologies to identify optimal solutions.</p>
+                </div>
+                <div class="process-step">
+                    <i class="fas fa-drafting-compass"></i>
+                    <h3>Design</h3>
+                    <p>We develop innovative, efficient designs that meet all technical requirements and regulatory standards.</p>
+                </div>
+                <div class="process-step">
+                    <i class="fas fa-check-circle"></i>
+                    <h3>Implementation</h3>
+                    <p>We provide support during implementation to ensure designs are executed correctly and efficiently.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta">
+        <div class="container">
+            <h2>Ready to Discuss Your Project?</h2>
+            <p>Contact us today to learn how our engineering expertise can help you achieve your project goals with safety, efficiency, and innovation.</p>
+            <a href="Contact.html" class="btn">Get in Touch</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-container">
+                <div class="footer-col">
+                    <h3>FiSTra Engineering</h3>
+                    <p>Experts in structural and fire engineering with close relations to research and development.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="Services.html">Services</a></li>
+                        <li><a href="Projects.html">Projects</a></li>
+                        <li><a href="About.html">About Us</a></li>
+                        <li><a href="Blog.html">Blog</a></li>
+                        <li><a href="Contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Services</h3>
+                    <ul class="footer-links">
+                        <li><a href="Services.html#structural">Structural Engineering</a></li>
+                        <li><a href="Services.html#fire">Fire Engineering</a></li>
+                        <li><a href="Services.html#multidisciplinary">Multi-Disciplinary Engineering</a></li>
+                        <li><a href="Services.html#research">Research & Development</a></li>
+                        <li><a href="Services.html">Consultation</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Contact Info</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> Lusaka, Zambia</p>
+                    <p><i class="fas fa-phone"></i> +260 960 930 466</p>
+                    <p><i class="fas fa-envelope"></i> ernest.kakoma@fistraengineering.com</p>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2025 FiSTra Engineering Limited. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+            // Mobile menu functionality
+     const menuToggle = document.getElementById('menu-toggle');
+     const nav = document.getElementById('nav');
+     const body = document.body;
+     
+     // Add index to menu items for staggered animation
+     const navItems = document.querySelectorAll('#nav ul li');
+     navItems.forEach((item, index) => {
+         item.style.setProperty('--i', index);
+     });
+     
+     // Create overlay element
+     const overlay = document.createElement('div');
+     overlay.className = 'menu-overlay';
+     document.body.appendChild(overlay);
+     
+     // Toggle menu function
+     function toggleMenu() {
+         const isActive = nav.classList.contains('active');
+         
+         if (isActive) {
+             // Closing menu
+             nav.classList.remove('active');
+             menuToggle.classList.remove('active');
+             body.classList.remove('menu-open');
+             overlay.style.opacity = '0';
+             setTimeout(() => {
+                 overlay.style.display = 'none';
+             }, 300);
+         } else {
+             // Opening menu
+             nav.classList.add('active');
+             menuToggle.classList.add('active');
+             body.classList.add('menu-open');
+             overlay.style.display = 'block';
+             setTimeout(() => {
+                 overlay.style.opacity = '1';
+             }, 10);
+         }
+     }
+     
+     // Menu toggle click event
+     menuToggle.addEventListener('click', (e) => {
+         e.stopPropagation();
+         toggleMenu();
+     });
+     
+     // Close menu when clicking overlay
+     overlay.addEventListener('click', toggleMenu);
+     
+     // Close menu when clicking on a nav link (for single page navigation)
+     document.querySelectorAll('#nav ul li a').forEach(link => {
+         link.addEventListener('click', () => {
+             if (window.innerWidth <= 768) {
+                 toggleMenu();
+             }
+         });
+     });
+     
+     // Close menu when clicking outside on mobile
+     document.addEventListener('click', (e) => {
+         if (window.innerWidth <= 768 && 
+             nav.classList.contains('active') &&
+             !nav.contains(e.target) && 
+             !menuToggle.contains(e.target)) {
+             toggleMenu();
+         }
+     });
+     
+     // Close menu on window resize (if resized to larger screen)
+     window.addEventListener('resize', () => {
+         if (window.innerWidth > 768) {
+             nav.classList.remove('active');
+             menuToggle.classList.remove('active');
+             body.classList.remove('menu-open');
+             overlay.style.display = 'none';
+         }
+     });
+     
+     // Close menu with Escape key
+     document.addEventListener('keydown', (e) => {
+         if (e.key === 'Escape' && nav.classList.contains('active')) {
+             toggleMenu();
+         }
+     });
+     
+     
+     
+     // Smooth scrolling for anchor links
+     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+         anchor.addEventListener('click', function(e) {
+             const targetId = this.getAttribute('href');
+             
+             // Only handle internal page anchors
+             if (targetId.startsWith('#') && targetId.length > 1) {
+                 e.preventDefault();
+                 const targetElement = document.querySelector(targetId);
+                 
+                 if (targetElement) {
+                     // Calculate offset for header height
+                     const headerHeight = document.querySelector('header').offsetHeight;
+                     const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset;
+                     
+                     window.scrollTo({
+                         top: targetPosition - headerHeight - 20,
+                         behavior: 'smooth'
+                     });
+                 }
+             }
+         });
+     });
+     
+     // Add active class to current page in navigation
+     function setActiveNavItem() {
+         const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+         const navLinks = document.querySelectorAll('nav ul li a');
+         
+         navLinks.forEach(link => {
+             const linkPage = link.getAttribute('href');
+             if (linkPage === currentPage) {
+                 link.classList.add('active');
+             }
+         });
+     }
+     
+     // Call when page loads
+     document.addEventListener('DOMContentLoaded', function() {
+         setActiveNavItem();
+         
+         // Add animation on scroll for elements
+         const animateOnScroll = () => {
+             const elements = document.querySelectorAll('.service-card, .project-card, .value-item, .cert-card, .team-member, .benefit-item');
+             
+             elements.forEach(element => {
+                 const elementPosition = element.getBoundingClientRect().top;
+                 const screenPosition = window.innerHeight / 1.2;
+                 
+                 if (elementPosition < screenPosition) {
+                     element.style.opacity = '1';
+                     element.style.transform = 'translateY(0)';
+                 }
+             });
+         };
+         
+         // Set initial state for animation
+         document.querySelectorAll('.service-card, .project-card, .value-item, .cert-card, .team-member, .benefit-item').forEach(el => {
+             el.style.opacity = '0';
+             el.style.transform = 'translateY(20px)';
+             el.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+         });
+         
+         // Run on load and scroll
+         animateOnScroll();
+         window.addEventListener('scroll', animateOnScroll);
+     });
+     
+     // Fix for mobile viewport height
+     function setVhProperty() {
+         const vh = window.innerHeight * 0.01;
+         document.documentElement.style.setProperty('--vh', `${vh}px`);
+     }
+     
+     // Set viewport height on load and resize
+     setVhProperty();
+     window.addEventListener('resize', setVhProperty);
+     window.addEventListener('orientationchange', setVhProperty);
+     
+     // Optional: Lazy loading for images
+     if ('IntersectionObserver' in window) {
+         const imageObserver = new IntersectionObserver((entries, observer) => {
+             entries.forEach(entry => {
+                 if (entry.isIntersecting) {
+                     const img = entry.target;
+                     img.src = img.dataset.src;
+                     img.classList.add('loaded');
+                     observer.unobserve(img);
+                 }
+             });
+         });
+         
+         document.querySelectorAll('img[data-src]').forEach(img => {
+             imageObserver.observe(img);
+         });
+     }
+    </script>
+</body>
+</html>

@@ -1,0 +1,1204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Projects - FiSTra Engineering Limited</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Global Styles */
+        :root {
+            --primary: #1a5276;
+            --secondary: #2e86c1;
+            --accent: #e74c3c;
+            --light: #f8f9fa;
+            --dark: #2c3e50;
+            --gray: #7f8c8d;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #fff;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background-color: var(--accent);
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+        
+        .btn:hover {
+            background-color: #c0392b;
+            transform: translateY(-2px);
+        }
+        
+        .btn-outline {
+            background-color: transparent;
+            border: 2px solid var(--primary);
+            color: var(--primary);
+        }
+        
+        .btn-outline:hover {
+            background-color: var(--primary);
+            color: white;
+        }
+        
+        section {
+            padding: 80px 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+            color: var(--primary);
+        }
+        
+        .section-title h2 {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background-color: var(--accent);
+        }
+        
+        .section-title p {
+            font-size: 1.1rem;
+            color: var(--gray);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        /* Header & Navigation */
+header {
+    background-color: white;
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 0;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo h1 {
+    font-size: 1.8rem;
+    color: var(--primary);
+    font-weight: 700;
+}
+
+.logo span {
+    color: var(--accent);
+}
+
+.menu-toggle {
+    display: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    position: relative;
+    z-index: 1001;
+    width: 30px;
+    height: 30px;
+}
+
+.menu-toggle .fa-times {
+    display: none;
+}
+
+.menu-toggle.active .fa-bars {
+    display: none;
+}
+
+.menu-toggle.active .fa-times {
+    display: block;
+}
+
+nav {
+    transition: all 0.3s ease;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+}
+
+nav ul li {
+    margin-left: 30px;
+    position: relative;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: var(--dark);
+    font-weight: 600;
+    font-size: 1rem;
+    transition: color 0.3s ease;
+    position: relative;
+    padding: 5px 0;
+}
+
+nav ul li a.contact-nav-btn {
+    background-color: var(--accent);
+    color: white;
+    padding: 8px 20px;
+    border-radius: 4px;
+}
+
+nav ul li a.contact-nav-btn:hover {
+    background-color: #c0392b;
+}
+
+nav ul li a.contact-nav-btn::after {
+    display: none;
+}
+
+nav ul li a:hover {
+    color: var(--accent);
+}
+
+nav ul li a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--accent);
+    transition: width 0.3s ease;
+}
+
+nav ul li a:hover::after {
+    width: 100%;
+}
+        
+        /* Page Header */
+        .page-header {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('assets/bg.jpg') no-repeat center center/cover;
+            color: white;
+            text-align: center;
+            padding: 100px 0;
+        }
+        
+        .page-header h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+        
+        .breadcrumb {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+        }
+        
+        .breadcrumb li {
+            margin: 0 10px;
+        }
+        
+        .breadcrumb li a {
+            color: white;
+            text-decoration: none;
+        }
+        
+        .breadcrumb li::after {
+            content: '>';
+            margin-left: 10px;
+            color: var(--accent);
+        }
+        
+        .breadcrumb li:last-child::after {
+            content: '';
+        }
+        
+        /* Projects Filter */
+        .projects-filter {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-bottom: 40px;
+        }
+        
+        .filter-btn {
+            padding: 8px 20px;
+            background-color: white;
+            border: 1px solid var(--primary);
+            border-radius: 30px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .filter-btn:hover, .filter-btn.active {
+            background-color: var(--primary);
+            color: white;
+        }
+        
+        /* Projects Grid */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 30px;
+        }
+        
+        .project-card {
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+            background-color: white;
+        }
+        
+        .project-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .project-image {
+            height: 250px;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .project-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .project-card:hover .project-image img {
+            transform: scale(1.1);
+        }
+        
+        .project-category {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background-color: var(--accent);
+            color: white;
+            padding: 5px 15px;
+            border-radius: 30px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+        
+        .project-content {
+            padding: 25px;
+        }
+        
+        .project-content h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: var(--primary);
+        }
+        
+        .project-meta {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 15px;
+            font-size: 0.9rem;
+            color: var(--gray);
+        }
+        
+        .project-content p {
+            margin-bottom: 20px;
+        }
+        
+        /* Project Detail Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            z-index: 1001;
+            overflow-y: auto;
+            padding: 50px 20px;
+        }
+        
+        .modal-content {
+            background-color: white;
+            max-width: 900px;
+            margin: 0 auto;
+            border-radius: 8px;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .close-modal {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-size: 1.5rem;
+            color: white;
+            background-color: var(--accent);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            z-index: 10;
+        }
+        
+        .modal-image {
+            height: 400px;
+            overflow: hidden;
+        }
+        
+        .modal-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .modal-body {
+            padding: 30px;
+        }
+        
+        .modal-body h2 {
+            font-size: 2rem;
+            margin-bottom: 15px;
+            color: var(--primary);
+        }
+        
+        .modal-meta {
+            display: flex;
+            gap: 20px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+        
+        .modal-meta div {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .modal-meta i {
+            color: var(--accent);
+        }
+        
+        /* Stats Section */
+        .stats {
+            background-color: var(--primary);
+            color: white;
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+        }
+        
+        .stat-item {
+            text-align: center;
+            padding: 30px;
+        }
+        
+        .stat-item i {
+            font-size: 3rem;
+            color: var(--accent);
+            margin-bottom: 20px;
+        }
+        
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+        
+        /* CTA Section */
+        .cta {
+            background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url('assets/contact.jpg') no-repeat center center/cover;
+            color: white;
+            text-align: center;
+            padding: 100px 0;
+        }
+        
+        .cta h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+        
+        .cta p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--dark);
+            color: white;
+            padding: 60px 0 30px;
+        }
+        
+        .footer-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        
+        .footer-col h3 {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+        
+        .footer-col h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 2px;
+            background-color: var(--accent);
+        }
+        
+        .footer-col p {
+            margin-bottom: 20px;
+        }
+        
+        .footer-links {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 12px;
+        }
+        
+        .footer-links a {
+            color: #ddd;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .footer-links a:hover {
+            color: var(--accent);
+            padding-left: 5px;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 15px;
+        }
+        
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.1);
+            color: white;
+            border-radius: 50%;
+            transition: all 0.3s ease;
+        }
+        
+        .social-links a:hover {
+            background-color: var(--accent);
+            transform: translateY(-3px);
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            .projects-grid {
+                grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .menu-toggle {
+                display: block;
+            }
+            
+            nav {
+                position: fixed;
+                top: 0;
+                left: -100%;
+                width: 50%;
+                height: 100vh;
+                background-color: rgba(255, 255, 255, 0.98);
+                flex-direction: column;
+                transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+                box-shadow: none;
+                z-index: 1000;
+                padding-top: 80px;
+                backdrop-filter: blur(10px);
+                -webkit-backdrop-filter: blur(10px);
+            }
+            
+            nav.active {
+                left: 0;
+                box-shadow: 0 0 30px rgba(0, 0, 0, 0.1);
+            }
+            
+            nav ul {
+                flex-direction: column;
+                width: 100%;
+                padding: 0 20px;
+            }
+            
+            nav ul li {
+                margin: 0;
+                width: 100%;
+                text-align: left;
+                opacity: 0;
+                transform: translateX(-20px);
+                transition: all 0.3s ease;
+                transition-delay: calc(0.1s * var(--i));
+            }
+            
+            nav.active ul li {
+                opacity: 1;
+                transform: translateX(0);
+            }
+            
+            nav ul li a {
+                display: block;
+                padding: 15px 0;
+                border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+                font-size: 1.1rem;
+                color: var(--dark);
+            }
+            
+            nav ul li a.contact-nav-btn {
+                margin-top: 10px;
+                text-align: center;
+                background-color: var(--accent);
+                color: white;
+                border-radius: 4px;
+                border: none;
+            }
+            
+            nav ul li a::after {
+                display: none;
+            }
+            
+            .header-container {
+                padding: 15px 0;
+                position: relative;
+            }
+            
+            .logo h1 {
+                font-size: 1.5rem;
+            }
+            
+            .page-header h1 {
+                font-size: 2.5rem;
+            }
+            
+            .section-title h2 {
+                font-size: 2rem;
+            }
+            
+            .modal-image {
+                height: 300px;
+            }
+        }
+        /* Tablet Navigation */
+@media (max-width: 992px) and (min-width: 769px) {
+    nav ul li {
+    margin-left: 20px;
+    }
+    
+    nav ul li a {
+    font-size: 0.9rem;
+    }
+    
+    .logo h1 {
+    font-size: 1.6rem;
+    }
+    }
+    
+    /* Prevent body scroll when menu is open */
+    body.menu-open {
+    overflow: hidden;
+    }
+    
+    /* Overlay for mobile menu */
+    .menu-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+    }
+    
+    body.menu-open .menu-overlay {
+    display: block;
+    }
+    </style>
+</head>
+<body>
+    <!-- Header & Navigation -->
+    <header>
+        <div class="container header-container">
+            <div class="logo">
+                <h1>FiSTra<span> Engineering</span> Ltd.</h1>
+            </div>
+            <div class="menu-toggle" id="menu-toggle">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-times"></i>
+            </div>
+            <nav id="nav">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="Services.html">Services</a></li>
+                    <li><a href="Projects.html">Projects</a></li>
+                    <li><a href="About.html">About</a></li>
+                    <li><a href="Blog.html">Blog</a></li>
+                    <li><a href="Contact.html" class="contact-nav-btn">Contact Us</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>Our Projects</h1>
+            <ul class="breadcrumb">
+                <li><a href="index.html">Home</a></li>
+                <li>Projects</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Projects Filter -->
+    <section>
+        <div class="container">
+            <div class="projects-filter">
+                <button class="filter-btn active" data-filter="all">All Projects</button>
+                <button class="filter-btn" data-filter="structural">Structural</button>
+                <button class="filter-btn" data-filter="bridge">Bridges</button>
+                <button class="filter-btn" data-filter="infrastructure">Infrastructure</button>
+                <button class="filter-btn" data-filter="commercial">Commercial</button>
+                <button class="filter-btn" data-filter="international">International</button>
+            </div>
+            
+            <!-- Projects Grid -->
+            <div class="projects-grid">
+                <!-- Project 1 -->
+                <div class="project-card" data-category="bridge infrastructure international">
+                    <div class="project-image">
+                        <img src="assets/kazungula.jpeg" alt="Kazungula Bridge">
+                        <div class="project-category">Bridge</div>
+                    </div>
+                    <div class="project-content">
+                        <h3>Kazungula Bridge</h3>
+                        <div class="project-meta">
+                            <span><i class="far fa-calendar"></i> 2019 - 2022</span>
+                            <span><i class="fas fa-map-marker-alt"></i> Zambia-Botswana Border</span>
+                        </div>
+                        <p>Extradosed bridge across Zambezi River (923 m, 129 m main span, road + rail). Worked as Bridge Engineer / QA Engineer for Daewoo E&C.</p>
+                        <a href="#" class="btn btn-outline view-project" data-project="1">View Project</a>
+                    </div>
+                </div>
+                
+                <!-- Project 2 -->
+                <div class="project-card" data-category="infrastructure international">
+                    <div class="project-image">
+                        <img src="assets/kariba_dam.jpeg" alt="Kariba Dam Rehabilitation">
+                        <div class="project-category">Infrastructure</div>
+                    </div>
+                    <div class="project-content">
+                        <h3>Kariba Dam Rehabilitation</h3>
+                        <div class="project-meta">
+                            <span><i class="far fa-calendar"></i> 2024</span>
+                            <span><i class="fas fa-map-marker-alt"></i> Zambia-Zimbabwe Border</span>
+                        </div>
+                        <p>Refurbishment of 6 sluice gates and new precast girders for gantry crane. Served as Technical Engineer for Freyssinet International.</p>
+                        <a href="#" class="btn btn-outline view-project" data-project="2">View Project</a>
+                    </div>
+                </div>
+                
+                <!-- Project 3 -->
+                <div class="project-card" data-category="bridge infrastructure">
+                    <div class="project-image">
+                        <img src="assets/Luongo_Bridge.jpeg" alt="Luongo Bridge">
+                        <div class="project-category">Bridge</div>
+                    </div>
+                    <div class="project-content">
+                        <h3>Luongo Bridge</h3>
+                        <div class="project-meta">
+                            <span><i class="far fa-calendar"></i> 2024</span>
+                            <span><i class="fas fa-map-marker-alt"></i> Kawambwa, Zambia</span>
+                        </div>
+                        <p>Design of 2-span 40 m precast hollow box girder bridge. Served as Principal Design Bridge Engineer for Rolledstone Engineering.</p>
+                        <a href="#" class="btn btn-outline view-project" data-project="3">View Project</a>
+                    </div>
+                </div>
+                
+                <!-- Project 4 -->
+                <div class="project-card" data-category="commercial international">
+                    <div class="project-image">
+                        <img src="assets/Luano_City_Developmen.jpeg" alt="Luano City Development">
+                        <div class="project-category">Commercial</div>
+                    </div>
+                    <div class="project-content">
+                        <h3>Luano City Development</h3>
+                        <div class="project-meta">
+                            <span><i class="far fa-calendar"></i> 2022 - 2023</span>
+                            <span><i class="fas fa-map-marker-alt"></i> Democratic Republic of Congo</span>
+                        </div>
+                        <p>Design & supervision of housing units, warehouses, offices, and recreation centers. Served as Structural Engineer for Forum Properties Africa.</p>
+                        <a href="#" class="btn btn-outline view-project" data-project="4">View Project</a>
+                    </div>
+                </div>
+                
+                <!-- Project 5 -->
+                <div class="project-card" data-category="infrastructure">
+                    <div class="project-image">
+                        <img src="assets/Kafubu Bridges.jpeg" alt="Kafubu Bridges">
+                        <div class="project-category">Infrastructure</div>
+                    </div>
+                    <div class="project-content">
+                        <h3>Kafubu Bridges</h3>
+                        <div class="project-meta">
+                            <span><i class="far fa-calendar"></i> 2024</span>
+                            <span><i class="fas fa-map-marker-alt"></i> Ndola, Zambia</span>
+                        </div>
+                        <p>Design of 4 bridges (40 m each) as part of Ndola Dual Carriageway project. Served as Principal Design Bridge Engineer for Rolledstone Engineering.</p>
+                        <a href="#" class="btn btn-outline view-project" data-project="5">View Project</a>
+                    </div>
+                </div>
+                
+                <!-- Project 6 -->
+                <div class="project-card" data-category="structural commercial">
+                    <div class="project-image">
+                        <img src="assets/Zambia_Healthcare_Project.jpeg" alt="Zambia Healthcare Project">
+                        <div class="project-category">Structural</div>
+                    </div>
+                    <div class="project-content">
+                        <h3>Zambia Healthcare Project</h3>
+                        <div class="project-meta">
+                            <span><i class="far fa-calendar"></i> 2021 - 2022</span>
+                            <span><i class="fas fa-map-marker-alt"></i> Zambia</span>
+                        </div>
+                        <p>Design & construction supervision of 108 mini-hospitals in light frame steel. Served as Civil Engineer/Site Manager for Suscon Construction Solutions.</p>
+                        <a href="#" class="btn btn-outline view-project" data-project="6">View Project</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <i class="fas fa-building"></i>
+                    <div class="stat-number">20+</div>
+                    <div class="stat-text">Projects Completed</div>
+                </div>
+                <div class="stat-item">
+                    <i class="fas fa-globe"></i>
+                    <div class="stat-number">4</div>
+                    <div class="stat-text">Countries</div>
+                </div>
+                <div class="stat-item">
+                    <i class="fas fa-bridge"></i>
+                    <div class="stat-number">10+</div>
+                    <div class="stat-text">Bridges Designed</div>
+                </div>
+                <div class="stat-item">
+                    <i class="fas fa-award"></i>
+                    <div class="stat-number">5</div>
+                    <div class="stat-text">Industry Awards</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta">
+        <div class="container">
+            <h2>Have a Project in Mind?</h2>
+            <p>Contact us today to discuss how our engineering expertise can bring your project to life with innovative solutions and uncompromising safety standards.</p>
+            <a href="Contact.html" class="btn">Get in Touch</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-container">
+                <div class="footer-col">
+                    <h3>FiSTra Engineering</h3>
+                    <p>Experts in structural and fire engineering with close relations to research and development.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="Services.html">Services</a></li>
+                        <li><a href="Projects.html">Projects</a></li>
+                        <li><a href="About.html">About Us</a></li>
+                        <li><a href="Blog.html">Blog</a></li>
+                        <li><a href="Contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Services</h3>
+                    <ul class="footer-links">
+                        <li><a href="Services.html#structural">Structural Engineering</a></li>
+                        <li><a href="Services.html#fire">Fire Engineering</a></li>
+                        <li><a href="Services.html#multidisciplinary">Multi-Disciplinary Engineering</a></li>
+                        <li><a href="Services.html#research">Research & Development</a></li>
+                        <li><a href="Services.html">Consultation</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Contact Info</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> Lusaka, Zambia</p>
+                    <p><i class="fas fa-phone"></i> +260 960 930 466</p>
+                    <p><i class="fas fa-envelope"></i> ernest.kakoma@fistraengineering.com</p>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2025 FiSTra Engineering Limited. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Project Modals -->
+    <!-- Project 1 Modal -->
+    <div id="project-1" class="modal">
+        <div class="modal-content">
+            <div class="close-modal">&times;</div>
+            <div class="modal-image">
+                <img src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" alt="Kazungula Bridge">
+            </div>
+            <div class="modal-body">
+                <h2>Kazungula Bridge</h2>
+                <div class="modal-meta">
+                    <div><i class="far fa-calendar"></i> 2019 - 2022</div>
+                    <div><i class="fas fa-map-marker-alt"></i> Zambia-Botswana Border</div>
+                    <div><i class="fas fa-tag"></i> Bridge Engineering</div>
+                    <div><i class="fas fa-building"></i> Infrastructure</div>
+                </div>
+                <p>The Kazungula Bridge is an extradosed bridge that spans the Zambezi River between Zambia and Botswana. With a total length of 923 meters and a main span of 129 meters, it accommodates both road and rail traffic, significantly improving transportation links in the region.</p>
+                <p>As Bridge Engineer and QA Engineer for Daewoo E&C, our Managing Director was responsible for quality assurance, design verification, and ensuring compliance with international standards throughout the construction phase.</p>
+                <h3>Key Features</h3>
+                <ul>
+                    <li>Extradosed bridge design combining cable-stayed and girder bridge elements</li>
+                    <li>Dual-purpose structure accommodating both highway and railway</li>
+                    <li>Advanced seismic considerations for the region</li>
+                    <li>International collaboration between multiple engineering firms</li>
+                    <li>Environmental considerations for the Zambezi River ecosystem</li>
+                </ul>
+                <h3>Technical Specifications</h3>
+                <p>Total Length: 923 meters | Main Span: 129 meters | Structure Type: Extradosed Bridge | Materials: Prestressed concrete and steel</p>
+                <a href="Contact.html" class="btn">Start a Similar Project</a>
+            </div>
+        </div>
+    </div>
+    
+
+    <script>
+          // Mobile menu functionality
+     const menuToggle = document.getElementById('menu-toggle');
+     const nav = document.getElementById('nav');
+     const body = document.body;
+     
+     // Add index to menu items for staggered animation
+     const navItems = document.querySelectorAll('#nav ul li');
+     navItems.forEach((item, index) => {
+         item.style.setProperty('--i', index);
+     });
+     
+     // Create overlay element
+     const overlay = document.createElement('div');
+     overlay.className = 'menu-overlay';
+     document.body.appendChild(overlay);
+     
+     // Toggle menu function
+     function toggleMenu() {
+         const isActive = nav.classList.contains('active');
+         
+         if (isActive) {
+             // Closing menu
+             nav.classList.remove('active');
+             menuToggle.classList.remove('active');
+             body.classList.remove('menu-open');
+             overlay.style.opacity = '0';
+             setTimeout(() => {
+                 overlay.style.display = 'none';
+             }, 300);
+         } else {
+             // Opening menu
+             nav.classList.add('active');
+             menuToggle.classList.add('active');
+             body.classList.add('menu-open');
+             overlay.style.display = 'block';
+             setTimeout(() => {
+                 overlay.style.opacity = '1';
+             }, 10);
+         }
+     }
+     
+     // Menu toggle click event
+     menuToggle.addEventListener('click', (e) => {
+         e.stopPropagation();
+         toggleMenu();
+     });
+     
+     // Close menu when clicking overlay
+     overlay.addEventListener('click', toggleMenu);
+     
+     // Close menu when clicking on a nav link (for single page navigation)
+     document.querySelectorAll('#nav ul li a').forEach(link => {
+         link.addEventListener('click', () => {
+             if (window.innerWidth <= 768) {
+                 toggleMenu();
+             }
+         });
+     });
+     
+     // Close menu when clicking outside on mobile
+     document.addEventListener('click', (e) => {
+         if (window.innerWidth <= 768 && 
+             nav.classList.contains('active') &&
+             !nav.contains(e.target) && 
+             !menuToggle.contains(e.target)) {
+             toggleMenu();
+         }
+     });
+     
+     // Close menu on window resize (if resized to larger screen)
+     window.addEventListener('resize', () => {
+         if (window.innerWidth > 768) {
+             nav.classList.remove('active');
+             menuToggle.classList.remove('active');
+             body.classList.remove('menu-open');
+             overlay.style.display = 'none';
+         }
+     });
+     
+     // Close menu with Escape key
+     document.addEventListener('keydown', (e) => {
+         if (e.key === 'Escape' && nav.classList.contains('active')) {
+             toggleMenu();
+         }
+     });
+     
+     
+     
+     // Smooth scrolling for anchor links
+     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+         anchor.addEventListener('click', function(e) {
+             const targetId = this.getAttribute('href');
+             
+             // Only handle internal page anchors
+             if (targetId.startsWith('#') && targetId.length > 1) {
+                 e.preventDefault();
+                 const targetElement = document.querySelector(targetId);
+                 
+                 if (targetElement) {
+                     // Calculate offset for header height
+                     const headerHeight = document.querySelector('header').offsetHeight;
+                     const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset;
+                     
+                     window.scrollTo({
+                         top: targetPosition - headerHeight - 20,
+                         behavior: 'smooth'
+                     });
+                 }
+             }
+         });
+     });
+     
+     // Add active class to current page in navigation
+     function setActiveNavItem() {
+         const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+         const navLinks = document.querySelectorAll('nav ul li a');
+         
+         navLinks.forEach(link => {
+             const linkPage = link.getAttribute('href');
+             if (linkPage === currentPage) {
+                 link.classList.add('active');
+             }
+         });
+     }
+     
+     // Call when page loads
+     document.addEventListener('DOMContentLoaded', function() {
+         setActiveNavItem();
+         
+         // Add animation on scroll for elements
+         const animateOnScroll = () => {
+             const elements = document.querySelectorAll('.service-card, .project-card, .value-item, .cert-card, .team-member, .benefit-item');
+             
+             elements.forEach(element => {
+                 const elementPosition = element.getBoundingClientRect().top;
+                 const screenPosition = window.innerHeight / 1.2;
+                 
+                 if (elementPosition < screenPosition) {
+                     element.style.opacity = '1';
+                     element.style.transform = 'translateY(0)';
+                 }
+             });
+         };
+         
+         // Set initial state for animation
+         document.querySelectorAll('.service-card, .project-card, .value-item, .cert-card, .team-member, .benefit-item').forEach(el => {
+             el.style.opacity = '0';
+             el.style.transform = 'translateY(20px)';
+             el.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+         });
+         
+         // Run on load and scroll
+         animateOnScroll();
+         window.addEventListener('scroll', animateOnScroll);
+     });
+     
+     // Fix for mobile viewport height
+     function setVhProperty() {
+         const vh = window.innerHeight * 0.01;
+         document.documentElement.style.setProperty('--vh', `${vh}px`);
+     }
+     
+     // Set viewport height on load and resize
+     setVhProperty();
+     window.addEventListener('resize', setVhProperty);
+     window.addEventListener('orientationchange', setVhProperty);
+     
+     // Optional: Lazy loading for images
+     if ('IntersectionObserver' in window) {
+         const imageObserver = new IntersectionObserver((entries, observer) => {
+             entries.forEach(entry => {
+                 if (entry.isIntersecting) {
+                     const img = entry.target;
+                     img.src = img.dataset.src;
+                     img.classList.add('loaded');
+                     observer.unobserve(img);
+                 }
+             });
+         });
+         
+         document.querySelectorAll('img[data-src]').forEach(img => {
+             imageObserver.observe(img);
+         });
+     }
+
+        // Project filtering
+        const filterButtons = document.querySelectorAll('.filter-btn');
+        const projectCards = document.querySelectorAll('.project-card');
+        
+        filterButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                // Remove active class from all buttons
+                filterButtons.forEach(btn => btn.classList.remove('active'));
+                // Add active class to clicked button
+                button.classList.add('active');
+                
+                const filterValue = button.getAttribute('data-filter');
+                
+                projectCards.forEach(card => {
+                    if (filterValue === 'all' || card.getAttribute('data-category').includes(filterValue)) {
+                        card.style.display = 'block';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            });
+        });
+
+        // Project modal functionality
+        const viewProjectButtons = document.querySelectorAll('.view-project');
+        const modals = document.querySelectorAll('.modal');
+        const closeModalButtons = document.querySelectorAll('.close-modal');
+        
+        viewProjectButtons.forEach(button => {
+            button.addEventListener('click', (e) => {
+                e.preventDefault();
+                const projectId = button.getAttribute('data-project');
+                document.getElementById(`project-${projectId}`).style.display = 'block';
+                document.body.style.overflow = 'hidden';
+            });
+        });
+        
+        closeModalButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                modals.forEach(modal => {
+                    modal.style.display = 'none';
+                });
+                document.body.style.overflow = 'auto';
+            });
+        });
+        
+        // Close modal when clicking outside
+        window.addEventListener('click', (e) => {
+            if (e.target.classList.contains('modal')) {
+                modals.forEach(modal => {
+                    modal.style.display = 'none';
+                });
+                document.body.style.overflow = 'auto';
+            }
+        });
+    </script>
+</body>
+</html>

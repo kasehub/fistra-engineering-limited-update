@@ -1,0 +1,1128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FiSTra Engineering Limited | Structural & Fire Engineering Experts</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+         /* Global Styles */
+ :root {
+    --primary: #1a5276;
+    --secondary: #2e86c1;
+    --accent: #e74c3c;
+    --light: #f8f9fa;
+    --dark: #2c3e50;
+    --gray: #7f8c8d;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #fff;
+}
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 12px 30px;
+    background-color: var(--accent);
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    border: none;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background-color: #c0392b;
+    transform: translateY(-2px);
+}
+
+.btn-outline {
+    background-color: transparent;
+    border: 2px solid var(--primary);
+    color: var(--primary);
+}
+
+.btn-outline:hover {
+    background-color: var(--primary);
+    color: white;
+}
+
+section {
+    padding: 80px 0;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 50px;
+    color: var(--primary);
+}
+
+.section-title h2 {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+    position: relative;
+    display: inline-block;
+}
+
+.section-title h2::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 4px;
+    background-color: var(--accent);
+}
+
+.section-title p {
+    font-size: 1.1rem;
+    color: var(--gray);
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+/* Header & Navigation */
+header {
+    background-color: white;
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 0;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo h1 {
+    font-size: 1.8rem;
+    color: var(--primary);
+    font-weight: 700;
+}
+
+.logo span {
+    color: var(--accent);
+}
+
+.menu-toggle {
+    display: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    position: relative;
+    z-index: 1001;
+    width: 30px;
+    height: 30px;
+}
+
+.menu-toggle .fa-times {
+    display: none;
+}
+
+.menu-toggle.active .fa-bars {
+    display: none;
+}
+
+.menu-toggle.active .fa-times {
+    display: block;
+}
+
+nav {
+    transition: all 0.3s ease;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+}
+
+nav ul li {
+    margin-left: 30px;
+    position: relative;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: var(--dark);
+    font-weight: 600;
+    font-size: 1rem;
+    transition: color 0.3s ease;
+    position: relative;
+    padding: 5px 0;
+}
+
+nav ul li a.contact-nav-btn {
+    background-color: var(--accent);
+    color: white;
+    padding: 8px 20px;
+    border-radius: 4px;
+}
+
+nav ul li a.contact-nav-btn:hover {
+    background-color: #c0392b;
+}
+
+nav ul li a.contact-nav-btn::after {
+    display: none;
+}
+
+nav ul li a:hover {
+    color: var(--accent);
+}
+
+nav ul li a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--accent);
+    transition: width 0.3s ease;
+}
+
+nav ul li a:hover::after {
+    width: 100%;
+}
+
+/* Hero Section */
+.hero {
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('assets/bg.jpg') no-repeat center center/cover;
+    color: white;
+    text-align: center;
+    padding: 150px 0;
+}
+
+.hero-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.hero h1 {
+    font-size: 3.5rem;
+    margin-bottom: 20px;
+    font-weight: 700;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+}
+
+/* Services Section */
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.service-card {
+    background-color: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.service-card:hover {
+    transform: translateY(-10px);
+}
+
+.service-icon {
+    background-color: var(--primary);
+    color: white;
+    font-size: 2.5rem;
+    padding: 30px;
+    text-align: center;
+}
+
+.service-content {
+    padding: 25px;
+}
+
+.service-content h3 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    color: var(--primary);
+}
+
+/* Projects Section */
+.projects {
+    background-color: #f9f9f9;
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.project-card {
+    position: relative;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    height: 250px;
+}
+
+.project-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.project-card:hover img {
+    transform: scale(1.1);
+}
+
+.project-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+    padding: 20px;
+    color: white;
+}
+
+.project-overlay h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+/* About Section */
+.about-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    align-items: center;
+}
+
+.about-image {
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.about-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.about-text h2 {
+    font-size: 2.2rem;
+    margin-bottom: 20px;
+    color: var(--primary);
+}
+
+.about-text p {
+    margin-bottom: 20px;
+    font-size: 1.1rem;
+}
+
+/* Values Section */
+.values {
+    background-color: var(--primary);
+    color: white;
+}
+
+.values-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+}
+
+.value-item {
+    text-align: center;
+    padding: 30px;
+}
+
+.value-item i {
+    font-size: 3rem;
+    color: var(--accent);
+    margin-bottom: 20px;
+}
+
+.value-item h3 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+}
+
+/* Certifications Section */
+.certifications {
+    background-color: #f9f9f9;
+}
+
+.cert-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+}
+
+.cert-card {
+    background-color: white;
+    border-radius: 8px;
+    padding: 30px;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.cert-card i {
+    font-size: 3rem;
+    color: var(--primary);
+    margin-bottom: 20px;
+}
+
+/* Team Section */
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.team-member {
+    background-color: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.team-image {
+    height: 300px;
+    overflow: hidden;
+}
+
+.team-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.team-info {
+    padding: 25px;
+}
+
+.team-info h3 {
+    font-size: 1.5rem;
+    margin-bottom: 5px;
+    color: var(--primary);
+}
+
+.team-role {
+    color: var(--accent);
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+
+/* Why Choose Us Section */
+.benefits {
+    background-color: var(--primary);
+    color: white;
+}
+
+.benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.benefit-item {
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 30px;
+    border-radius: 8px;
+}
+
+.benefit-item h3 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.benefit-item i {
+    color: var(--accent);
+}
+
+/* Contact Section */
+.contact {
+    background-color: #f9f9f9;
+}
+
+.contact-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+}
+
+.contact-info {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.contact-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+}
+
+.contact-item i {
+    font-size: 1.5rem;
+    color: var(--accent);
+}
+
+.contact-form {
+    background-color: white;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+}
+
+.form-group input,
+.form-group textarea,
+.form-group select {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-family: inherit;
+}
+
+.form-group textarea {
+    min-height: 150px;
+}
+
+/* Footer */
+footer {
+    background-color: var(--dark);
+    color: white;
+    padding: 60px 0 30px;
+}
+
+.footer-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 40px;
+    margin-bottom: 40px;
+}
+
+.footer-col h3 {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+.footer-col h3::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 50px;
+    height: 2px;
+    background-color: var(--accent);
+}
+
+.footer-col p {
+    margin-bottom: 20px;
+}
+
+.footer-links {
+    list-style: none;
+}
+
+.footer-links li {
+    margin-bottom: 12px;
+}
+
+.footer-links a {
+    color: #ddd;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+    color: var(--accent);
+    padding-left: 5px;
+}
+
+.social-links {
+    display: flex;
+    gap: 15px;
+}
+
+.social-links a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background-color: rgba(255, 255, 255, 0.1);
+    color: white;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+}
+
+.social-links a:hover {
+    background-color: var(--accent);
+    transform: translateY(-3px);
+}
+
+.copyright {
+    text-align: center;
+    padding-top: 30px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+    .about-content,
+    .contact-container {
+        grid-template-columns: 1fr;
+    }
+    
+    .about-image {
+        order: -1;
+    }
+}
+
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: block;
+    }
+    
+    nav {
+        position: fixed;
+        top: 0;
+        left: -100%;
+        width: 50%;
+        height: 100vh;
+        background-color: rgba(255, 255, 255, 0.98);
+        flex-direction: column;
+        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        box-shadow: none;
+        z-index: 1000;
+        padding-top: 80px;
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+    }
+    
+    nav.active {
+        left: 0;
+        box-shadow: 0 0 30px rgba(0, 0, 0, 0.1);
+    }
+    
+    nav ul {
+        flex-direction: column;
+        width: 100%;
+        padding: 0 20px;
+    }
+    
+    nav ul li {
+        margin: 0;
+        width: 100%;
+        text-align: left;
+        opacity: 0;
+        transform: translateX(-20px);
+        transition: all 0.3s ease;
+        transition-delay: calc(0.1s * var(--i));
+    }
+    
+    nav.active ul li {
+        opacity: 1;
+        transform: translateX(0);
+    }
+    
+    nav ul li a {
+        display: block;
+        padding: 15px 0;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+        font-size: 1.1rem;
+        color: var(--dark);
+    }
+    
+    nav ul li a.contact-nav-btn {
+        margin-top: 10px;
+        text-align: center;
+        background-color: var(--accent);
+        color: white;
+        border-radius: 4px;
+        border: none;
+    }
+    
+    nav ul li a::after {
+        display: none;
+    }
+    
+    .header-container {
+        padding: 15px 0;
+        position: relative;
+    }
+    
+    .logo h1 {
+        font-size: 1.5rem;
+    }
+
+    .hero {
+        padding: 100px 0;
+    }
+    
+    .hero h1 {
+        font-size: 2.2rem;
+    }
+    .hero p{
+        font-size: 1rem;
+        padding: 0 10px;
+    }
+    
+    .section-title h2 {
+        font-size: 1.8rem;
+    }
+    .section-title p{
+        padding: 0 15px;
+    }
+}
+/* Tablet Navigation */
+@media (max-width: 992px) and (min-width: 769px) {
+nav ul li {
+margin-left: 20px;
+}
+
+nav ul li a {
+font-size: 0.9rem;
+}
+
+.logo h1 {
+font-size: 1.6rem;
+}
+}
+
+/* Prevent body scroll when menu is open */
+body.menu-open {
+overflow: hidden;
+}
+
+/* Overlay for mobile menu */
+.menu-overlay {
+display: none;
+position: fixed;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+background-color: rgba(0, 0, 0, 0.5);
+z-index: 999;
+}
+
+body.menu-open .menu-overlay {
+display: block;
+}
+    </style>
+</head>
+<body>
+    <!-- Header & Navigation -->
+    <header>
+        <div class="container header-container">
+            <div class="logo">
+                <h1>FiSTra<span> Engineering</span> Ltd.</h1>
+            </div>
+            <div class="menu-toggle" id="menu-toggle">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-times"></i>
+            </div>
+            <nav id="nav">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="Services.html">Services</a></li>
+                    <li><a href="Projects.html">Projects</a></li>
+                    <li><a href="About.html">About</a></li>
+                    <li><a href="Blog.html">Blog</a></li>
+                    <li><a href="Contact.html" class="contact-nav-btn">Contact Us</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container hero-content">
+            <h1>Engineering Strength & Safety</h1>
+            <p>Specialists in structural and fire engineering with close relations to research and development. Our engineers are experts in their fields with extensive experience in local and international engineering.</p>
+            <a href="Contact.html" class="btn">Get in Touch</a>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Services</h2>
+                <p>Comprehensive engineering solutions tailored to your specific needs</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-building"></i>
+                    </div>
+                    <div class="service-content">
+                        <h3>Structural Engineering</h3>
+                        <p>Feasibility studies, new structure design, condition assessments, expert reports, proof checks, and Building Information Modelling (BIM).</p>
+                        <a href="Services.html#structural" class="btn btn-outline">Learn More</a>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-fire-extinguisher"></i>
+                    </div>
+                    <div class="service-content">
+                        <h3>Fire Engineering</h3>
+                        <p>Fire Safety Design, Fire Risk Assessment, Evacuation Modelling & Planning, Design of Fire Suppression & Detection Systems.</p>
+                        <a href="Services.html#fire" class="btn btn-outline">Learn More</a>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-cogs"></i>
+                    </div>
+                    <div class="service-content">
+                        <h3>Multi-Disciplinary Engineering</h3>
+                        <p>Civil, Mechanical, Electrical, and Chemical Engineering services for comprehensive project solutions.</p>
+                        <a href="Services.html#multidisciplinary" class="btn btn-outline">Learn More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2>About FiSTra Engineering</h2>
+                    <p>FiSTra Engineering is a specialist consultancy in structural and fire engineering, delivering expert solutions backed by extensive local and international experience. We are committed to providing cost-effective, practical designs tailored to meet each client's unique needs.</p>
+                    <p>We serve diverse sectors such as mining, transportation, commercial, industrial, and residential—bringing precision, innovation, and reliability to every project.</p>
+                    <p>Our name "FiSTra" represents our core values: Forward Thinking, Integrity, Safety, Technical Excellence, Reliability, and Adaptability.</p>
+                    <a href="About.html" class="btn btn-outline">Learn More About Us</a>
+                </div>
+                <div class="about-image">
+                    <img src="assets/About.jpg" alt="Our Engineering Team">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Values Section -->
+    <section class="values">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Core Values</h2>
+                <p style="color:#fff">The principles that guide everything we do</p>
+            </div>
+            <div class="values-grid">
+                <div class="value-item">
+                    <i class="fas fa-lightbulb"></i>
+                    <h3>Forward Thinking</h3>
+                    <p>We embrace innovation and anticipate future challenges to deliver lasting engineering solutions.</p>
+                </div>
+                <div class="value-item">
+                    <i class="fas fa-handshake"></i>
+                    <h3>Integrity</h3>
+                    <p>We act with honesty, transparency, and strong moral principles in all our engagements.</p>
+                </div>
+                <div class="value-item">
+                    <i class="fas fa-shield-alt"></i>
+                    <h3>Safety</h3>
+                    <p>We prioritise the protection of lives, assets, and the environment in all our designs.</p>
+                </div>
+                <div class="value-item">
+                    <i class="fas fa-award"></i>
+                    <h3>Technical Excellence</h3>
+                    <p>We apply precision, expertise, and best practices to achieve superior results.</p>
+                </div>
+                <div class="value-item">
+                    <i class="fas fa-clock"></i>
+                    <h3>Reliability</h3>
+                    <p>We deliver on our promises with consistency and dependability.</p>
+                </div>
+                <div class="value-item">
+                    <i class="fas fa-sync-alt"></i>
+                    <h3>Adaptability</h3>
+                    <p>We remain flexible and responsive, adjusting to changing needs, technologies, and environments.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section class="projects">
+        <div class="container">
+            <div class="section-title">
+                <h2>Featured Projects</h2>
+                <p>Some of our recent successful engineering projects</p>
+            </div>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <img src="assets/kazungula.jpeg" alt="Kazungula Bridge">
+                    <div class="project-overlay">
+                        <h3>Kazungula Bridge</h3>
+                        <p>Extradosed bridge across Zambezi River (923 m, 129 m main span, road + rail)</p>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <img src="assets/kariba_dam.jpeg" alt="Kariba Dam Rehabilitation">
+                    <div class="project-overlay">
+                        <h3>Kariba Dam Rehabilitation</h3>
+                        <p>Refurbishment of 6 sluice gates and new precast girders for gantry crane</p>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <img src="assets/Luano_City_Developmen.jpeg" alt="Luano City Development">
+                    <div class="project-overlay">
+                        <h3>Luano City Development</h3>
+                        <p>Design & supervision of housing units, warehouses, offices, and recreation centers</p>
+                    </div>
+                </div>
+            </div>
+            <div style="text-align: center; margin-top: 40px;">
+                <a href="Projects.html" class="btn">View All Projects</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Certifications Section -->
+    <section class="certifications">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Certifications</h2>
+                <p>Fully compliant with regulatory requirements and industry standards</p>
+            </div>
+            <div class="cert-grid">
+                <div class="cert-card">
+                    <i class="fas fa-file-contract"></i>
+                    <h3>PACRA Registration</h3>
+                    <p>Certificate of Incorporation as a Private Company Limited by Shares</p>
+                </div>
+                <div class="cert-card">
+                    <i class="fas fa-certificate"></i>
+                    <h3>Engineering Registration Board</h3>
+                    <p>Practising Certificate for Civil, Mechanical, and Electrical Engineering</p>
+                </div>
+                <div class="cert-card">
+                    <i class="fas fa-balance-scale"></i>
+                    <h3>ZRA Compliance</h3>
+                    <p>Tax Clearance Certificate valid until 31/12/2025</p>
+                </div>
+                <div class="cert-card">
+                    <i class="fas fa-building"></i>
+                    <h3>Registered Engineering Organisation</h3>
+                    <p>Authorised to practice engineering in Zambia</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    
+
+    <!-- Why Choose Us Section -->
+    <section class="benefits">
+        <div class="container">
+            <div class="section-title">
+                <h2 style="color: #fff;">Why Choose FiSTra Engineering?</h2>
+                <p style="color: #fff;">We deliver exceptional value through our specialized expertise and commitment to excellence</p>
+            </div>
+            <div class="benefits-grid">
+                <div class="benefit-item">
+                    <h3><i class="fas fa-graduation-cap"></i> Specialised Expertise</h3>
+                    <p>We are a consultancy dedicated to Structural Engineering and Fire Engineering, offering focused technical excellence that few firms can match.</p>
+                </div>
+                <div class="benefit-item">
+                    <h3><i class="fas fa-shield-alt"></i> Commitment to Safety & Compliance</h3>
+                    <p>Our solutions are fully aligned with local and international engineering codes, ensuring that every project meets the highest standards of safety and reliability.</p>
+                </div>
+                <div class="benefit-item">
+                    <h3><i class="fas fa-lightbulb"></i> Innovative & Cost-Effective Solutions</h3>
+                    <p>We apply modern engineering tools and advanced methodologies to deliver designs that are safe, sustainable, and cost-efficient.</p>
+                </div>
+                <div class="benefit-item">
+                    <h3><i class="fas fa-chart-line"></i> Proven Track Record</h3>
+                    <p>Our engineers have successfully delivered projects across residential, commercial, and industrial sectors, including complex structures requiring integrated fire safety strategies.</p>
+                </div>
+                <div class="benefit-item">
+                    <h3><i class="fas fa-sync-alt"></i> Holistic Design Approach</h3>
+                    <p>By combining structural and fire engineering expertise, we provide comprehensive solutions that minimize risk and maximize efficiency.</p>
+                </div>
+                <div class="benefit-item">
+                    <h3><i class="fas fa-check-double"></i> Quality Assurance</h3>
+                    <p>Every stage of our work undergoes rigorous checks and peer reviews, ensuring the highest level of precision and reliability.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact">
+        <div class="container">
+            <div class="section-title">
+                <h2>Contact Us</h2>
+                <p>Get in touch with our engineering experts</p>
+            </div>
+            <div class="contact-container">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <h3>Head Office</h3>
+                            <p>Lusaka, Zambia</p>
+                            <p>No. 1010 Meanwood Kwamwena, Lusaka Province</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <div>
+                            <h3>Phone</h3>
+                            <p>+260 960 930 466 (WhatsApp)</p>
+                            <p>+260 975 313 200</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <h3>Email</h3>
+                            <p>ernest.kakoma@fistraengineering.com</p>
+                            <p>ernestkakomajr@gmail.com</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-clock"></i>
+                        <div>
+                            <h3>Business Hours</h3>
+                            <p>Monday-Friday: 8:00 AM - 6:00 PM</p>
+                            <p>Saturday: 9:00 AM - 1:00 PM</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <label for="name">Your Name</label>
+                            <input type="text" id="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Your Email</label>
+                            <input type="email" id="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="service">Service Interested In</label>
+                            <select id="service">
+                                <option value="">Select a service</option>
+                                <option value="structural">Structural Engineering</option>
+                                <option value="fire">Fire Engineering</option>
+                                <option value="civil">Civil Engineering</option>
+                                <option value="mechanical">Mechanical Engineering</option>
+                                <option value="electrical">Electrical Engineering</option>
+                                <option value="chemical">Chemical Engineering</option>
+                                <option value="research">Research & Development</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Your Message</label>
+                            <textarea id="message" required></textarea>
+                        </div>
+                        <button type="submit" class="btn">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-container">
+                <div class="footer-col">
+                    <h3>FiSTra Engineering</h3>
+                    <p>Experts in structural and fire engineering with close relations to research and development.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="Services.html">Services</a></li>
+                        <li><a href="Projects.html">Projects</a></li>
+                        <li><a href="About.html">About Us</a></li>
+                        <li><a href="Blog.html">Blog</a></li>
+                        <li><a href="Contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Services</h3>
+                    <ul class="footer-links">
+                        <li><a href="Services.html#structural">Structural Engineering</a></li>
+                        <li><a href="Services.html#fire">Fire Engineering</a></li>
+                        <li><a href="Services.html#civil">Civil Engineering</a></li>
+                        <li><a href="Services.html#mechanical">Mechanical Engineering</a></li>
+                        <li><a href="Services.html#electrical">Electrical Engineering</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Certifications</h3>
+                    <p>PACRA Registered • ERB Certified • ZRA Compliant • Registered Engineering Organisation</p>
+                    
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2025 FiSTra Engineering Limited. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/index.js"></script>
+</body>
+</html>
