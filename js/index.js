@@ -84,43 +84,64 @@
          }
      });
      
-     // Contact form submission with validation
-     document.getElementById('contactForm').addEventListener('submit', function(e) {
-         e.preventDefault();
-         
-         // Basic form validation
-         const name = document.getElementById('name').value.trim();
-         const email = document.getElementById('email').value.trim();
-         const message = document.getElementById('message').value.trim();
-         
-         if (!name || !email || !message) {
-             alert('Please fill in all required fields: Name, Email, and Message.');
-             return;
-         }
-         
-         // Email validation
-         const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-         if (!emailRegex.test(email)) {
-             alert('Please enter a valid email address.');
-             return;
-         }
-         
-         // Show loading state
-         const submitBtn = this.querySelector('.btn');
-         const originalText = submitBtn.textContent;
-         submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
-         submitBtn.disabled = true;
-         
-         // Simulate form submission (replace with actual AJAX call)
-         setTimeout(() => {
-             alert('Thank you for your message, ' + name + '! We will get back to you soon at ' + email + '.');
-             this.reset();
-             
-             // Reset button
-             submitBtn.textContent = originalText;
-             submitBtn.disabled = false;
-         }, 1500);
-     });
+     // Contact form submission with validation + Web3Forms integration
+document.getElementById('contactForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    
+    // Basic form validation
+    const name = document.getElementById('name').value.trim();
+    const email = document.getElementById('email').value.trim();
+    const message = document.getElementById('message').value.trim();
+    const service = document.getElementById('service').value;
+    
+    if (!name || !email || !message || !service) {
+        alert('Please fill in all required fields: Name, Email, Services and Message.');
+        return;
+    }
+    
+    // Email validation
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email)) {
+        alert('Please enter a valid email address.');
+        return;
+    }
+    
+    // Show loading state
+    const submitBtn = this.querySelector('.btn');
+    const originalText = submitBtn.textContent;
+    submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
+    submitBtn.disabled = true;
+
+    // Web3Forms submission
+    const form = this;
+    const formData = new FormData(form);
+
+    fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        body: formData
+    })
+    .then(async response => {
+        let result = await response.json();
+
+        if (result.success) {
+            alert('Thank you for your message, ' + name + '! We will get back to you soon at ' + email + '.');
+            form.reset();
+        } else {
+            alert('Submission failed. Please try again.');
+        }
+
+        // Reset button
+        submitBtn.textContent = originalText;
+        submitBtn.disabled = false;
+    })
+    .catch(() => {
+        alert('Network error. Please try again.');
+
+        // Reset button
+        submitBtn.textContent = originalText;
+        submitBtn.disabled = false;
+    });
+});
      
      // Smooth scrolling for anchor links
      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
