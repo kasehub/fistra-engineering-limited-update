@@ -763,7 +763,7 @@ display: block;
     <header>
         <div class="container header-container">
             <div class="logo">
-                <h1>FiSTra<span> Engineering</span> Ltd.</h1>
+                <h1>FiSTra<span> Engineering</span> Ltd</h1>
             </div>
             <div class="menu-toggle" id="menu-toggle">
                 <i class="fas fa-bars"></i>
@@ -811,7 +811,7 @@ display: block;
                 </div>
                 <div class="service-card">
                     <div class="service-icon">
-                        <i class="fas fa-fire-extinguisher"></i>
+                        <i class="fas fa-fire"></i>
                     </div>
                     <div class="service-content">
                         <h3>Fire Engineering</h3>
@@ -855,7 +855,7 @@ display: block;
     <section class="values">
         <div class="container">
             <div class="section-title">
-                <h2>Our Core Values</h2>
+                <h2 style="color:#fff">Our Core Values</h2>
                 <p style="color:#fff">The principles that guide everything we do</p>
             </div>
             <div class="values-grid">
@@ -1042,33 +1042,43 @@ display: block;
                     </div>
                 </div>
                 <div class="contact-form">
-                    <form id="contactForm">
+                    <form id="contactForm" action="https://api.web3forms.com/submit" method="POST">
+
+                        <!-- REQUIRED Web3Forms Access Key -->
+                        <input type="hidden" name="access_key" value="97534e08-93e9-406d-b7ce-bf267ab609f1">
+                    
                         <div class="form-group">
                             <label for="name">Your Name</label>
-                            <input type="text" id="name" required>
+                            <input type="text" id="name" name="name" required>
                         </div>
+                        
                         <div class="form-group">
                             <label for="email">Your Email</label>
-                            <input type="email" id="email" required>
+                            <input type="email" id="email" name="email" required>
                         </div>
+                        
+                        <div class="form-group">
+                            <label for="phone">Phone Number</label>
+                            <input type="tel" id="phone" name="phone">
+                        </div>
+                        
                         <div class="form-group">
                             <label for="service">Service Interested In</label>
-                            <select id="service">
+                            <select id="service" name="service">
                                 <option value="">Select a service</option>
                                 <option value="structural">Structural Engineering</option>
                                 <option value="fire">Fire Engineering</option>
-                                <option value="civil">Civil Engineering</option>
-                                <option value="mechanical">Mechanical Engineering</option>
-                                <option value="electrical">Electrical Engineering</option>
-                                <option value="chemical">Chemical Engineering</option>
+                                <option value="forensic">Forensic Engineering</option>
                                 <option value="research">Research & Development</option>
                                 <option value="other">Other</option>
                             </select>
                         </div>
+                        
                         <div class="form-group">
                             <label for="message">Your Message</label>
-                            <textarea id="message" required></textarea>
+                            <textarea id="message" name="message" required></textarea>
                         </div>
+                        
                         <button type="submit" class="btn">Send Message</button>
                     </form>
                 </div>
