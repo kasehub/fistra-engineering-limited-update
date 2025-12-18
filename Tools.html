@@ -1,0 +1,1210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tools & Software - FiSTra Engineering Limited</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Global Styles */
+        :root {
+            --primary: #1a5276;
+            --secondary: #2e86c1;
+            --accent: #e74c3c;
+            --light: #f8f9fa;
+            --dark: #2c3e50;
+            --gray: #7f8c8d;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #fff;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background-color: var(--accent);
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+        
+        .btn:hover {
+            background-color: #c0392b;
+            transform: translateY(-2px);
+        }
+        
+        .btn-outline {
+            background-color: transparent;
+            border: 2px solid var(--primary);
+            color: var(--primary);
+        }
+        
+        .btn-outline:hover {
+            background-color: var(--primary);
+            color: white;
+        }
+        
+        section {
+            padding: 80px 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+            color: var(--primary);
+        }
+        
+        .section-title h2 {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background-color: var(--accent);
+        }
+        
+        .section-title p {
+            font-size: 1.1rem;
+            color: var(--gray);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        
+        /* Header & Navigation */
+        header {
+            background-color: white;
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo h1 {
+            font-size: 1.8rem;
+            color: var(--primary);
+            font-weight: 700;
+        }
+
+        .logo span {
+            color: var(--accent);
+        }
+
+        .menu-toggle {
+            display: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            position: relative;
+            z-index: 1001;
+            width: 30px;
+            height: 30px;
+        }
+
+        .menu-toggle .fa-times {
+            display: none;
+        }
+
+        .menu-toggle.active .fa-bars {
+            display: none;
+        }
+
+        .menu-toggle.active .fa-times {
+            display: block;
+        }
+
+        nav {
+            transition: all 0.3s ease;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+
+        nav ul li {
+            margin-left: 30px;
+            position: relative;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 600;
+            font-size: 1rem;
+            transition: color 0.3s ease;
+            position: relative;
+            padding: 5px 0;
+        }
+
+        nav ul li a.contact-nav-btn {
+            background-color: var(--accent);
+            color: white;
+            padding: 8px 20px;
+            border-radius: 4px;
+        }
+
+        nav ul li a.contact-nav-btn:hover {
+            background-color: #c0392b;
+        }
+
+        nav ul li a.contact-nav-btn::after {
+            display: none;
+        }
+
+        nav ul li a:hover {
+            color: var(--accent);
+        }
+
+        nav ul li a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--accent);
+            transition: width 0.3s ease;
+        }
+
+        nav ul li a:hover::after {
+            width: 100%;
+        }
+        
+        /* Page Header */
+        .page-header {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1500&q=80') no-repeat center center/cover;
+            color: white;
+            text-align: center;
+            padding: 100px 0;
+        }
+        
+        .page-header h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+        
+        .breadcrumb {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+        }
+        
+        .breadcrumb li {
+            margin: 0 10px;
+        }
+        
+        .breadcrumb li a {
+            color: white;
+            text-decoration: none;
+        }
+        
+        .breadcrumb li::after {
+            content: '>';
+            margin-left: 10px;
+            color: var(--accent);
+        }
+        
+        .breadcrumb li:last-child::after {
+            content: '';
+        }
+        
+        /* Tools Content */
+        .tools-intro {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 60px;
+            font-size: 1.1rem;
+            color: var(--gray);
+        }
+        
+        .tools-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 30px;
+            margin-bottom: 60px;
+        }
+        
+        .tool-card {
+            background-color: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .tool-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        }
+        
+        .tool-card-header {
+            background-color: var(--primary);
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        
+        .tool-card-header h3 {
+            font-size: 1.5rem;
+            margin: 0;
+        }
+        
+        .tool-card-icon {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            color: white;
+        }
+        
+        .tool-card-content {
+            padding: 25px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .tool-card-content p {
+            margin-bottom: 20px;
+            flex-grow: 1;
+        }
+        
+        .tool-card-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 15px;
+            border-top: 1px solid #eee;
+        }
+        
+        .tool-category {
+            background-color: var(--light);
+            color: var(--primary);
+            padding: 5px 15px;
+            border-radius: 30px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+        
+        /* Software Categories */
+        .categories-section {
+            background-color: var(--light);
+            padding: 80px 0;
+        }
+        
+        .categories-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+        
+        .category-card {
+            background-color: white;
+            padding: 30px;
+            border-radius: 8px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+        }
+        
+        .category-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+        
+        .category-icon {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+        
+        .category-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+            color: var(--primary);
+        }
+        
+        .category-card p {
+            color: var(--gray);
+            font-size: 0.95rem;
+        }
+        
+        /* Workflow Section */
+        .workflow-section {
+            text-align: center;
+        }
+        
+        .workflow-steps {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 40px;
+            margin-top: 50px;
+            position: relative;
+        }
+        
+        .workflow-step {
+            text-align: center;
+            flex: 1;
+            min-width: 200px;
+            position: relative;
+        }
+        
+        .workflow-step:not(:last-child)::after {
+            content: '→';
+            position: absolute;
+            right: -30px;
+            top: 30px;
+            font-size: 2rem;
+            color: var(--gray);
+        }
+        
+        .step-number {
+            width: 60px;
+            height: 60px;
+            background-color: var(--primary);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin: 0 auto 20px;
+        }
+        
+        .workflow-step h4 {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+            color: var(--primary);
+        }
+        
+        /* Newsletter Section */
+        .newsletter {
+            background-color: var(--primary);
+            color: white;
+            text-align: center;
+            padding: 80px 0;
+        }
+        
+        .newsletter h2 {
+            font-size: 2.2rem;
+            margin-bottom: 20px;
+        }
+        
+        .newsletter p {
+            max-width: 600px;
+            margin: 0 auto 30px;
+            font-size: 1.1rem;
+        }
+        
+        .newsletter-form {
+            max-width: 500px;
+            margin: 0 auto;
+            display: flex;
+        }
+        
+        .newsletter-form input {
+            flex: 1;
+            padding: 15px;
+            border: none;
+            border-radius: 4px 0 0 4px;
+            font-family: inherit;
+        }
+        
+        .newsletter-form button {
+            background-color: var(--accent);
+            color: white;
+            border: none;
+            padding: 0 25px;
+            border-radius: 0 4px 4px 0;
+            font-weight: 600;
+            cursor: pointer;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--dark);
+            color: white;
+            padding: 60px 0 30px;
+        }
+        
+        .footer-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        
+        .footer-col h3 {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+        
+        .footer-col h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 2px;
+            background-color: var(--accent);
+        }
+        
+        .footer-col p {
+            margin-bottom: 20px;
+        }
+        
+        .footer-links {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 12px;
+        }
+        
+        .footer-links a {
+            color: #ddd;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .footer-links a:hover {
+            color: var(--accent);
+            padding-left: 5px;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 15px;
+        }
+        
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.1);
+            color: white;
+            border-radius: 50%;
+            transition: all 0.3s ease;
+        }
+        
+        .social-links a:hover {
+            background-color: var(--accent);
+            transform: translateY(-3px);
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            .workflow-step:not(:last-child)::after {
+                display: none;
+            }
+            
+            .workflow-steps {
+                flex-direction: column;
+                gap: 30px;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .menu-toggle {
+                display: block;
+            }
+            
+            nav {
+                position: fixed;
+                top: 0;
+                left: -100%;
+                width: 50%;
+                height: 100vh;
+                background-color: rgba(255, 255, 255, 0.98);
+                flex-direction: column;
+                transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+                box-shadow: none;
+                z-index: 1000;
+                padding-top: 80px;
+                backdrop-filter: blur(10px);
+                -webkit-backdrop-filter: blur(10px);
+            }
+            
+            nav.active {
+                left: 0;
+                box-shadow: 0 0 30px rgba(0, 0, 0, 0.1);
+            }
+            
+            nav ul {
+                flex-direction: column;
+                width: 100%;
+                padding: 0 20px;
+            }
+            
+            nav ul li {
+                margin: 0;
+                width: 100%;
+                text-align: left;
+                opacity: 0;
+                transform: translateX(-20px);
+                transition: all 0.3s ease;
+                transition-delay: calc(0.1s * var(--i));
+            }
+            
+            nav.active ul li {
+                opacity: 1;
+                transform: translateX(0);
+            }
+            
+            nav ul li a {
+                display: block;
+                padding: 15px 0;
+                border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+                font-size: 1.1rem;
+                color: var(--dark);
+            }
+            
+            nav ul li a.contact-nav-btn {
+                margin-top: 10px;
+                text-align: center;
+                background-color: var(--accent);
+                color: white;
+                border-radius: 4px;
+                border: none;
+            }
+            
+            nav ul li a::after {
+                display: none;
+            }
+            
+            .header-container {
+                padding: 15px 0;
+                position: relative;
+            }
+            
+            .logo h1 {
+                font-size: 1.5rem;
+            }
+            
+            .page-header h1 {
+                font-size: 2.5rem;
+            }
+            
+            .section-title h2 {
+                font-size: 2rem;
+            }
+            
+            .tools-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .newsletter-form {
+                flex-direction: column;
+                gap: 10px;
+            }
+            
+            .newsletter-form input,
+            .newsletter-form button {
+                width: 100%;
+                padding: 15px;
+                border-radius: 4px;
+            }
+        }
+        
+        /* Tablet Navigation */
+        @media (max-width: 992px) and (min-width: 769px) {
+            nav ul li {
+                margin-left: 20px;
+            }
+            
+            nav ul li a {
+                font-size: 0.9rem;
+            }
+            
+            .logo h1 {
+                font-size: 1.6rem;
+            }
+            
+            .tools-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        
+        /* Prevent body scroll when menu is open */
+        body.menu-open {
+            overflow: hidden;
+        }
+        
+        /* Overlay for mobile menu */
+        .menu-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 999;
+        }
+        
+        body.menu-open .menu-overlay {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header & Navigation -->
+    <header>
+        <div class="container header-container">
+            <div class="logo">
+                <h1>FiSTra<span> Engineering</span> Ltd</h1>
+            </div>
+            <div class="menu-toggle" id="menu-toggle">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-times"></i>
+            </div>
+            <nav id="nav">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="Services.html">Services</a></li>
+                    <li><a href="Projects.html">Projects</a></li>
+                    <li><a href="About.html">About</a></li>
+                    <li><a href="Blog.html">Blog</a></li>
+                    <li><a href="Tools.html">Tools</a></li>
+                    <li><a href="Contact.html" class="contact-nav-btn">Contact Us</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>Our Tools & Software</h1>
+            <ul class="breadcrumb">
+                <li><a href="index.html">Home</a></li>
+                <li>Tools</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Tools Section -->
+    <section class="tools">
+        <div class="container">
+            <div class="section-title">
+                <h2>Advanced Engineering Software</h2>
+                <p>We utilize cutting-edge tools and technologies to deliver precise, efficient, and innovative engineering solutions</p>
+            </div>
+            
+            <div class="tools-intro">
+                <p>At FiSTra Engineering, we leverage a comprehensive suite of industry-leading software tools to enhance our structural and fire engineering capabilities. Our investment in advanced technology ensures we deliver optimal solutions for every project.</p>
+            </div>
+            
+            <div class="tools-grid">
+                <!-- Microsoft Project -->
+                <div class="tool-card">
+                    <div class="tool-card-header">
+                        <div class="tool-card-icon">
+                            <i class="fas fa-chart-gantt"></i>
+                        </div>
+                        <h3>Microsoft Project</h3>
+                    </div>
+                    <div class="tool-card-content">
+                        <p>Comprehensive project management software for planning, tracking, and managing engineering projects. We use it to optimize resource allocation, schedule tasks, and monitor project progress to ensure timely delivery.</p>
+                        <div class="tool-card-footer">
+                            <span class="tool-category">Project Management</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Computation Modelling -->
+                <div class="tool-card">
+                    <div class="tool-card-header">
+                        <div class="tool-card-icon">
+                            <i class="fas fa-calculator"></i>
+                        </div>
+                        <h3>Computation Modelling</h3>
+                    </div>
+                    <div class="tool-card-content">
+                        <p>Advanced computational models for simulating complex structural behaviors under various loads and conditions. Our custom modeling approaches allow for precise analysis of stress, deformation, and failure modes.</p>
+                        <div class="tool-card-footer">
+                            <span class="tool-category">Analysis</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- A.I Machine Learning -->
+                <div class="tool-card">
+                    <div class="tool-card-header">
+                        <div class="tool-card-icon">
+                            <i class="fas fa-brain"></i>
+                        </div>
+                        <h3>A.I & Machine Learning</h3>
+                    </div>
+                    <div class="tool-card-content">
+                        <p>We employ AI algorithms to optimize structural designs, predict material behavior, and automate routine tasks. Machine learning helps us identify patterns in structural performance data to improve future designs.</p>
+                        <div class="tool-card-footer">
+                            <span class="tool-category">Advanced Technology</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Sofistik -->
+                <div class="tool-card">
+                    <div class="tool-card-header">
+                        <div class="tool-card-icon">
+                            <i class="fas fa-cube"></i>
+                        </div>
+                        <h3>Sofistik</h3>
+                    </div>
+                    <div class="tool-card-content">
+                        <p>Powerful finite element analysis software for complex structural engineering calculations. We use Sofistik for detailed analysis of bridges, towers, and other specialized structures requiring high precision.</p>
+                        <div class="tool-card-footer">
+                            <span class="tool-category">FEA Analysis</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Allplan -->
+                <div class="tool-card">
+                    <div class="tool-card-header">
+                        <div class="tool-card-icon">
+                            <i class="fas fa-drafting-compass"></i>
+                        </div>
+                        <h3>Allplan</h3>
+                    </div>
+                    <div class="tool-card-content">
+                        <p>Integrated BIM solution for architecture and engineering. Allplan enables seamless collaboration between different disciplines and facilitates detailed 3D modeling of complex structural elements.</p>
+                        <div class="tool-card-footer">
+                            <span class="tool-category">BIM Software</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Scia Engineer -->
+                <div class="tool-card">
+                    <div class="tool-card-header">
+                        <div class="tool-card-icon">
+                            <i class="fas fa-building"></i>
+                        </div>
+                        <h3>Scia Engineer</h3>
+                    </div>
+                    <div class="tool-card-content">
+                        <p>Advanced structural analysis and design software for buildings and civil engineering structures. We utilize Scia Engineer for its efficient workflow and comprehensive code-checking capabilities.</p>
+                        <div class="tool-card-footer">
+                            <span class="tool-category">Structural Design</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Grasshopper -->
+                <div class="tool-card">
+                    <div class="tool-card-header">
+                        <div class="tool-card-icon">
+                            <i class="fas fa-shapes"></i>
+                        </div>
+                        <h3>Grasshopper</h3>
+                    </div>
+                    <div class="tool-card-content">
+                        <p>Visual programming language and environment that runs within Rhino. We use Grasshopper for parametric design, generative algorithms, and complex geometric modeling for innovative structural solutions.</p>
+                        <div class="tool-card-footer">
+                            <span class="tool-category">Parametric Design</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Rhino -->
+                <div class="tool-card">
+                    <div class="tool-card-header">
+                        <div class="tool-card-icon">
+                            <i class="fas fa-rhino"></i>
+                        </div>
+                        <h3>Rhino</h3>
+                    </div>
+                    <div class="tool-card-content">
+                        <p>Versatile 3D modeling software used for free-form surfaces, organic shapes, and complex geometries. Rhino enables us to create and analyze sophisticated structural forms with precision.</p>
+                        <div class="tool-card-footer">
+                            <span class="tool-category">3D Modeling</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Tekla Structures -->
+                <div class="tool-card">
+                    <div class="tool-card-header">
+                        <div class="tool-card-icon">
+                            <i class="fas fa-industry"></i>
+                        </div>
+                        <h3>Tekla Structures</h3>
+                    </div>
+                    <div class="tool-card-content">
+                        <p>BIM software for steel and concrete detailing, fabrication, and construction management. We use Tekla for accurate 3D modeling of structural components and seamless collaboration with fabricators.</p>
+                        <div class="tool-card-footer">
+                            <span class="tool-category">Detailing & Fabrication</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- ProtaStructure -->
+                <div class="tool-card">
+                    <div class="tool-card-header">
+                        <div class="tool-card-icon">
+                            <i class="fas fa-layer-group"></i>
+                        </div>
+                        <h3>ProtaStructure</h3>
+                    </div>
+                    <div class="tool-card-content">
+                        <p>Integrated structural analysis and design software for concrete and steel structures. ProtaStructure facilitates rapid modeling, analysis, and detailing within a single BIM environment.</p>
+                        <div class="tool-card-footer">
+                            <span class="tool-category">Integrated Design</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Revit -->
+                <div class="tool-card">
+                    <div class="tool-card-header">
+                        <div class="tool-card-icon">
+                            <i class="fas fa-cubes"></i>
+                        </div>
+                        <h3>Revit</h3>
+                    </div>
+                    <div class="tool-card-content">
+                        <p>Industry-standard BIM software for building design, documentation, and collaboration. We use Revit for creating intelligent 3D models that contain both geometric and non-geometric design information.</p>
+                        <div class="tool-card-footer">
+                            <span class="tool-category">BIM Platform</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Software Categories -->
+    <section class="categories-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Software Categories</h2>
+                <p>Our tools are organized into specialized categories to optimize different aspects of the engineering workflow</p>
+            </div>
+            
+            <div class="categories-grid">
+                <div class="category-card">
+                    <div class="category-icon">
+                        <i class="fas fa-project-diagram"></i>
+                    </div>
+                    <h3>Project Management</h3>
+                    <p>Tools for planning, scheduling, and managing engineering projects from conception to completion.</p>
+                </div>
+                
+                <div class="category-card">
+                    <div class="category-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>Analysis & Simulation</h3>
+                    <p>Software for structural analysis, finite element modeling, and performance simulation.</p>
+                </div>
+                
+                <div class="category-card">
+                    <div class="category-icon">
+                        <i class="fas fa-cube"></i>
+                    </div>
+                    <h3>3D Modeling & BIM</h3>
+                    <p>Tools for creating detailed 3D models and Building Information Modeling workflows.</p>
+                </div>
+                
+                <div class="category-card">
+                    <div class="category-icon">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <h3>Advanced Technologies</h3>
+                    <p>Cutting-edge tools including AI, machine learning, and parametric design systems.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Workflow Section -->
+    <section class="workflow-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Integrated Workflow</h2>
+                <p>How our tools work together to deliver exceptional engineering solutions</p>
+            </div>
+            
+            <div class="workflow-steps">
+                <div class="workflow-step">
+                    <div class="step-number">1</div>
+                    <h4>Concept & Planning</h4>
+                    <p>Using Rhino, Grasshopper, and Revit for initial design concepts and project planning with Microsoft Project.</p>
+                </div>
+                
+                <div class="workflow-step">
+                    <div class="step-number">2</div>
+                    <h4>Analysis & Design</h4>
+                    <p>Employing Scia Engineer, Sofistik, and ProtaStructure for detailed structural analysis and design calculations.</p>
+                </div>
+                
+                <div class="workflow-step">
+                    <div class="step-number">3</div>
+                    <h4>Modeling & Detailing</h4>
+                    <p>Creating comprehensive BIM models with Revit and Allplan, with detailed fabrication models in Tekla Structures.</p>
+                </div>
+                
+                <div class="workflow-step">
+                    <div class="step-number">4</div>
+                    <h4>Optimization</h4>
+                    <p>Applying AI algorithms and computational models to optimize designs for performance and efficiency.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section class="newsletter">
+        <div class="container">
+            <h2>Stay Updated with Our Tech Stack</h2>
+            <p>Subscribe to receive updates on new tools, software advancements, and how we leverage technology in engineering.</p>
+            <form class="newsletter-form">
+                <input type="email" placeholder="Your email address" required>
+                <button type="submit">Subscribe</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-container">
+                <div class="footer-col">
+                    <h3>FiSTra Engineering</h3>
+                    <p>Experts in structural and fire engineering with close relations to research and development.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="Services.html">Services</a></li>
+                        <li><a href="Projects.html">Projects</a></li>
+                        <li><a href="About.html">About Us</a></li>
+                        <li><a href="Blog.html">Blog</a></li>
+                        <li><a href="Tools.html">Tools</a></li>
+                        <li><a href="Contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Services</h3>
+                    <ul class="footer-links">
+                        <li><a href="Services.html#structural">Structural Engineering</a></li>
+                        <li><a href="Services.html#fire">Fire Engineering</a></li>
+                        <li><a href="Services.html#multidisciplinary">Multi-Disciplinary Engineering</a></li>
+                        <li><a href="Services.html#research">Research & Development</a></li>
+                        <li><a href="Services.html">Consultation</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Contact Info</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> Lusaka, Zambia</p>
+                    <p><i class="fas fa-phone"></i> +260 960 930 466</p>
+                    <p><i class="fas fa-envelope"></i> ernest.kakoma@fistraengineering.com</p>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2025 FiSTra Engineering Limited. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu functionality
+        const menuToggle = document.getElementById('menu-toggle');
+        const nav = document.getElementById('nav');
+        const body = document.body;
+        
+        // Add index to menu items for staggered animation
+        const navItems = document.querySelectorAll('#nav ul li');
+        navItems.forEach((item, index) => {
+            item.style.setProperty('--i', index);
+        });
+        
+        // Create overlay element
+        const overlay = document.createElement('div');
+        overlay.className = 'menu-overlay';
+        document.body.appendChild(overlay);
+        
+        // Toggle menu function
+        function toggleMenu() {
+            const isActive = nav.classList.contains('active');
+            
+            if (isActive) {
+                // Closing menu
+                nav.classList.remove('active');
+                menuToggle.classList.remove('active');
+                body.classList.remove('menu-open');
+                overlay.style.opacity = '0';
+                setTimeout(() => {
+                    overlay.style.display = 'none';
+                }, 300);
+            } else {
+                // Opening menu
+                nav.classList.add('active');
+                menuToggle.classList.add('active');
+                body.classList.add('menu-open');
+                overlay.style.display = 'block';
+                setTimeout(() => {
+                    overlay.style.opacity = '1';
+                }, 10);
+            }
+        }
+        
+        // Menu toggle click event
+        menuToggle.addEventListener('click', (e) => {
+            e.stopPropagation();
+            toggleMenu();
+        });
+        
+        // Close menu when clicking overlay
+        overlay.addEventListener('click', toggleMenu);
+        
+        // Close menu when clicking on a nav link (for single page navigation)
+        document.querySelectorAll('#nav ul li a').forEach(link => {
+            link.addEventListener('click', () => {
+                if (window.innerWidth <= 768) {
+                    toggleMenu();
+                }
+            });
+        });
+        
+        // Close menu when clicking outside on mobile
+        document.addEventListener('click', (e) => {
+            if (window.innerWidth <= 768 && 
+                nav.classList.contains('active') &&
+                !nav.contains(e.target) && 
+                !menuToggle.contains(e.target)) {
+                toggleMenu();
+            }
+        });
+        
+        // Close menu on window resize (if resized to larger screen)
+        window.addEventListener('resize', () => {
+            if (window.innerWidth > 768) {
+                nav.classList.remove('active');
+                menuToggle.classList.remove('active');
+                body.classList.remove('menu-open');
+                overlay.style.display = 'none';
+            }
+        });
+        
+        // Close menu with Escape key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && nav.classList.contains('active')) {
+                toggleMenu();
+            }
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                const targetId = this.getAttribute('href');
+                
+                // Only handle internal page anchors
+                if (targetId.startsWith('#') && targetId.length > 1) {
+                    e.preventDefault();
+                    const targetElement = document.querySelector(targetId);
+                    
+                    if (targetElement) {
+                        // Calculate offset for header height
+                        const headerHeight = document.querySelector('header').offsetHeight;
+                        const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset;
+                        
+                        window.scrollTo({
+                            top: targetPosition - headerHeight - 20,
+                            behavior: 'smooth'
+                        });
+                    }
+                }
+            });
+        });
+
+        // Add active class to current page in navigation
+        function setActiveNavItem() {
+            const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+            const navLinks = document.querySelectorAll('nav ul li a');
+            
+            navLinks.forEach(link => {
+                const linkPage = link.getAttribute('href');
+                if (linkPage === currentPage) {
+                    link.classList.add('active');
+                }
+            });
+        }
+
+        // Set active nav item on page load
+        setActiveNavItem();
+
+        // Newsletter form submission
+        document.querySelector('.newsletter-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Thank you for subscribing to our technology updates!');
+            this.reset();
+        });
+    </script>
+</body>
+</html>
