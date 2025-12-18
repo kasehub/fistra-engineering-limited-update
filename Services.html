@@ -833,27 +833,7 @@ nav ul li a:hover::after {
 </head>
 <body>
     <!-- Header & Navigation -->
-    <header>
-        <div class="container header-container">
-            <div class="logo">
-                <h1>FiSTra<span> Engineering</span> Ltd.</h1>
-            </div>
-            <div class="menu-toggle" id="menu-toggle">
-                <i class="fas fa-bars"></i>
-                <i class="fas fa-times"></i>
-            </div>
-            <nav id="nav">
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="Services.html">Services</a></li>
-                    <li><a href="Projects.html">Projects</a></li>
-                    <li><a href="About.html">About</a></li>
-                    <li><a href="Blog.html">Blog</a></li>
-                    <li><a href="Contact.html" class="contact-nav-btn">Contact Us</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
+    <div id="header"></div>
 
     <!-- Page Header -->
     <section class="page-header">
@@ -896,7 +876,7 @@ nav ul li a:hover::after {
                 </div>
                 <div class="service-card">
                     <div class="service-icon">
-                        <i class="fas fa-fire-extinguisher"></i>
+                        <i class="fas fa-fire"></i>
                     </div>
                     <div class="service-content">
                         <h3>Fire Engineering</h3>
@@ -1077,54 +1057,19 @@ nav ul li a:hover::after {
     </section>
 
     <!-- Footer -->
-    <footer>
-        <div class="container">
-            <div class="footer-container">
-                <div class="footer-col">
-                    <h3>FiSTra Engineering</h3>
-                    <p>Experts in structural and fire engineering with close relations to research and development.</p>
-                    <div class="social-links">
-                        <a href="#"><i class="fab fa-linkedin"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-facebook"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                    </div>
-                </div>
-                <div class="footer-col">
-                    <h3>Quick Links</h3>
-                    <ul class="footer-links">
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="Services.html">Services</a></li>
-                        <li><a href="Projects.html">Projects</a></li>
-                        <li><a href="About.html">About Us</a></li>
-                        <li><a href="Blog.html">Blog</a></li>
-                        <li><a href="Contact.html">Contact</a></li>
-                    </ul>
-                </div>
-                <div class="footer-col">
-                    <h3>Services</h3>
-                    <ul class="footer-links">
-                        <li><a href="Services.html#structural">Structural Engineering</a></li>
-                        <li><a href="Services.html#fire">Fire Engineering</a></li>
-                        <li><a href="Services.html#multidisciplinary">Multi-Disciplinary Engineering</a></li>
-                        <li><a href="Services.html#research">Research & Development</a></li>
-                        <li><a href="Services.html">Consultation</a></li>
-                    </ul>
-                </div>
-                <div class="footer-col">
-                    <h3>Contact Info</h3>
-                    <p><i class="fas fa-map-marker-alt"></i> Lusaka, Zambia</p>
-                    <p><i class="fas fa-phone"></i> +260 960 930 466</p>
-                    <p><i class="fas fa-envelope"></i> ernest.kakoma@fistraengineering.com</p>
-                </div>
-            </div>
-            <div class="copyright">
-                <p>&copy; 2025 FiSTra Engineering Limited. All rights reserved.</p>
-            </div>
-        </div>
-    </footer>
+    <div id="footer"></div>
 
     <script>
+        function loadHTML(id, file) {
+            fetch(file)
+              .then(response => response.text())
+              .then(data => {
+                document.getElementById(id).innerHTML = data;
+              });
+          }
+          
+          loadHTML("header", "header.html");
+          loadHTML("footer", "footer.html");
             // Mobile menu functionality
      const menuToggle = document.getElementById('menu-toggle');
      const nav = document.getElementById('nav');
