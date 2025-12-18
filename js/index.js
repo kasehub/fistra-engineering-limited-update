@@ -1,3 +1,15 @@
+function loadHTML(id, file) {
+    fetch(file)
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById(id).innerHTML = data;
+      });
+  }
+  
+  loadHTML("header", "header.html");
+  loadHTML("footer", "footer.html");
+  
+     
      // Mobile menu functionality
      const menuToggle = document.getElementById('menu-toggle');
      const nav = document.getElementById('nav');
