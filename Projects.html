@@ -101,7 +101,7 @@
         }
         
         /* Header & Navigation */
-header {
+#header {
     background-color: white;
     box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
     position: sticky;
@@ -419,6 +419,64 @@ nav ul li a:hover::after {
         .modal-meta i {
             color: var(--accent);
         }
+        /*load*/
+        .load-more-container {
+            width: 100%;
+            margin-top: 40px;
+        }
+        
+        #loadMoreBtn {
+            padding: 12px 40px;
+        }
+        
+        /* Modal Image Slider */
+.slider {
+    position: relative;
+    height: 400px;
+    overflow: hidden;
+}
+
+.slider .slides img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+.slider .slides img.active {
+    opacity: 1;
+    z-index: 1;
+}
+
+.slider-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0,0,0,0.6);
+    color: #fff;
+    border: none;
+    width: 45px;
+    height: 45px;
+    font-size: 22px;
+    cursor: pointer;
+    border-radius: 50%;
+    z-index: 2;
+}
+
+.slider-btn.prev {
+    left: 15px;
+}
+
+.slider-btn.next {
+    right: 15px;
+}
+
+.slider-btn:hover {
+    background: var(--accent);
+}
         
         /* Stats Section */
         .stats {
@@ -799,6 +857,7 @@ nav ul li a:hover::after {
                     </div>
                 </div>
                 
+                
                 <!-- Project 6 -->
                 <div class="project-card" data-category="structural commercial">
                     <div class="project-image">
@@ -815,9 +874,32 @@ nav ul li a:hover::after {
                         <a href="#" class="btn btn-outline view-project" data-project="6">View Project</a>
                     </div>
                 </div>
+                 <!-- Project 7 -->
+                 <div class="project-card" data-category="infrastructure">
+                    <div class="project-image">
+                        <img src="assets/Kafubu Bridges.jpeg" alt="Kafubu Bridges">
+                        <div class="project-category">Infrastructure</div>
+                    </div>
+                    <div class="project-content">
+                        <h3>Kafubu Bridges</h3>
+                        <div class="project-meta">
+                            <span><i class="far fa-calendar"></i> 2024</span>
+                            <span><i class="fas fa-map-marker-alt"></i> Ndola, Zambia</span>
+                        </div>
+                        <p>Design of 4 bridges (40 m each) as part of Ndola Dual Carriageway project. Served as Principal Design Bridge Engineer for Rolledstone Engineering.</p>
+                        <a href="#" class="btn btn-outline view-project" data-project="5">View Project</a>
+                    </div>
+                </div>
+            </div>
+            <div class="load-more-container" style="text-align:center;">
+                <button id="loadMoreBtn" class="btn btn-outline">
+                    See More Projects
+                </button>
             </div>
         </div>
+        
     </section>
+    
 
     <!-- Stats Section -->
     <section class="stats">
@@ -864,8 +946,15 @@ nav ul li a:hover::after {
     <div id="project-1" class="modal">
         <div class="modal-content">
             <div class="close-modal">&times;</div>
-            <div class="modal-image">
-                <img src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" alt="Kazungula Bridge">
+            <div class="modal-image slider">
+                <div class="slides">
+                    <img src="assets/kazungula.jpeg" class="active" alt="Kazungula Bridge">
+                    <img src="assets/kazungula.jpeg" alt="Kazungula Bridge View 2">
+                    <img src="assets/kazungula.jpeg" alt="Kazungula Bridge View 3">
+                </div>
+            
+                <button class="slider-btn prev">&#10094;</button>
+                <button class="slider-btn next">&#10095;</button>
             </div>
             <div class="modal-body">
                 <h2>Kazungula Bridge</h2>
@@ -887,6 +976,76 @@ nav ul li a:hover::after {
                 </ul>
                 <h3>Technical Specifications</h3>
                 <p>Total Length: 923 meters | Main Span: 129 meters | Structure Type: Extradosed Bridge | Materials: Prestressed concrete and steel</p>
+                <a href="Contact.html?source=project&title=Kazungula%20Bridge&service=structural" class="btn">Start a Similar Project</a>
+            </div>
+        </div>
+    </div>
+    <!-- project-2 Modal -->
+    <div id="project-2" class="modal">
+        <div class="modal-content">
+            <div class="close-modal">&times;</div>
+    
+            <div class="modal-image">
+                <img src="assets/kariba_dam.jpeg" alt="Kariba Dam Rehabilitation">
+            </div>
+    
+            <div class="modal-body">
+                <h2>Kariba Dam Rehabilitation</h2>
+    
+                <div class="modal-meta">
+                    <div><i class="far fa-calendar"></i> 2024</div>
+                    <div><i class="fas fa-map-marker-alt"></i> Zambia–Zimbabwe Border</div>
+                    <div><i class="fas fa-tag"></i> Dam Rehabilitation</div>
+                    <div><i class="fas fa-building"></i> Infrastructure</div>
+                </div>
+    
+                <p>
+                    Rehabilitation works on the Kariba Dam involving refurbishment of six sluice gates
+                    and installation of new precast girders for the gantry crane system.
+                </p>
+    
+                <h3>Scope of Work</h3>
+                <ul>
+                    <li>Structural assessment and refurbishment</li>
+                    <li>Precast girder installation</li>
+                    <li>Quality assurance and compliance</li>
+                    <li>Coordination with international stakeholders</li>
+                </ul>
+    
+                <a href="Contact.html" class="btn">Start a Similar Project</a>
+            </div>
+        </div>
+    </div>
+    <!-- project-3 Modal -->
+    <div id="project-3" class="modal">
+        <div class="modal-content">
+            <div class="close-modal">&times;</div>
+    
+            <div class="modal-image">
+                <img src="assets/Luongo_Bridge.jpeg" alt="Luongo Bridge">
+            </div>
+    
+            <div class="modal-body">
+                <h2>Luongo Bridge</h2>
+    
+                <div class="modal-meta">
+                    <div><i class="far fa-calendar"></i> 2024</div>
+                    <div><i class="fas fa-map-marker-alt"></i> Kawambwa, Zambia</div>
+                    <div><i class="fas fa-tag"></i> Bridge Design</div>
+                </div>
+    
+                <p>
+                    Two-span 40 m precast hollow box girder bridge designed to improve
+                    connectivity in Northern Zambia.
+                </p>
+    
+                <h3>Design Highlights</h3>
+                <ul>
+                    <li>Precast hollow box girders</li>
+                    <li>Optimized span arrangement</li>
+                    <li>Designed for durability and ease of construction</li>
+                </ul>
+    
                 <a href="Contact.html" class="btn">Start a Similar Project</a>
             </div>
         </div>
@@ -1087,27 +1246,61 @@ nav ul li a:hover::after {
      }
 
         // Project filtering
-        const filterButtons = document.querySelectorAll('.filter-btn');
-        const projectCards = document.querySelectorAll('.project-card');
-        
-        filterButtons.forEach(button => {
-            button.addEventListener('click', () => {
-                // Remove active class from all buttons
-                filterButtons.forEach(btn => btn.classList.remove('active'));
-                // Add active class to clicked button
-                button.classList.add('active');
-                
-                const filterValue = button.getAttribute('data-filter');
-                
-                projectCards.forEach(card => {
-                    if (filterValue === 'all' || card.getAttribute('data-category').includes(filterValue)) {
-                        card.style.display = 'block';
-                    } else {
-                        card.style.display = 'none';
-                    }
-                });
-            });
-        });
+        // ===== PROJECT FILTER + LOAD MORE (FIXED) =====
+
+const projects = Array.from(document.querySelectorAll('.project-card'));
+const filterButtons = document.querySelectorAll('.filter-btn');
+const loadMoreBtn = document.getElementById('loadMoreBtn');
+
+const PROJECTS_TO_SHOW = 6;
+const LOAD_INCREMENT = 3;
+
+let visibleCount = PROJECTS_TO_SHOW;
+let filteredProjects = [...projects];
+
+// Initial hide
+function updateVisibility() {
+    projects.forEach(card => card.style.display = 'none');
+
+    filteredProjects.forEach((card, index) => {
+        if (index < visibleCount) {
+            card.style.display = 'block';
+        }
+    });
+
+    loadMoreBtn.style.display =
+        filteredProjects.length > visibleCount ? 'inline-block' : 'none';
+}
+
+// Filter handler
+function applyFilter(filter) {
+    visibleCount = PROJECTS_TO_SHOW;
+
+    filteredProjects = projects.filter(card =>
+        filter === 'all' || card.dataset.category.includes(filter)
+    );
+
+    updateVisibility();
+}
+
+// Filter button events
+filterButtons.forEach(button => {
+    button.addEventListener('click', () => {
+        filterButtons.forEach(btn => btn.classList.remove('active'));
+        button.classList.add('active');
+        applyFilter(button.dataset.filter);
+    });
+});
+
+// Load more
+loadMoreBtn.addEventListener('click', () => {
+    visibleCount += LOAD_INCREMENT;
+    updateVisibility();
+});
+
+// Init
+applyFilter('all');
+
 
         // Project modal functionality
         const viewProjectButtons = document.querySelectorAll('.view-project');
@@ -1140,6 +1333,40 @@ nav ul li a:hover::after {
                 });
                 document.body.style.overflow = 'auto';
             }
+        });
+        // Modal image slider functionality
+        function initSliders() {
+            document.querySelectorAll('.slider').forEach(slider => {
+                const images = slider.querySelectorAll('img');
+                const prevBtn = slider.querySelector('.prev');
+                const nextBtn = slider.querySelector('.next');
+        
+                let currentIndex = 0;
+        
+                function showSlide(index) {
+                    images.forEach(img => img.classList.remove('active'));
+                    images[index].classList.add('active');
+                }
+        
+                prevBtn.addEventListener('click', e => {
+                    e.stopPropagation();
+                    currentIndex = (currentIndex - 1 + images.length) % images.length;
+                    showSlide(currentIndex);
+                });
+        
+                nextBtn.addEventListener('click', e => {
+                    e.stopPropagation();
+                    currentIndex = (currentIndex + 1) % images.length;
+                    showSlide(currentIndex);
+                });
+            });
+        }
+        
+        // Initialize sliders when a modal opens
+        document.querySelectorAll('.view-project').forEach(btn => {
+            btn.addEventListener('click', () => {
+                setTimeout(initSliders, 50);
+            });
         });
     </script>
 </body>
