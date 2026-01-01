@@ -101,7 +101,7 @@
         }
         
         /* Header & Navigation */
-header {
+#header {
     background-color: white;
     box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
     position: sticky;
@@ -690,8 +690,7 @@ nav ul li a:hover::after {
                         </div>
                         <div class="contact-details">
                             <h3>Phone</h3>
-                            <p>+260 960 930 466</p>
-                            <p>+260 960 930 466</p>
+                            <p>+260766991797</p>
                         </div>
                     </div>
                     
@@ -702,7 +701,6 @@ nav ul li a:hover::after {
                         <div class="contact-details">
                             <h3>Email</h3>
                             <p>info@fistraengineering.com</p>
-                            <p>support@fistraengineering.com</p>
                         </div>
                     </div>
                     
@@ -724,7 +722,7 @@ nav ul li a:hover::after {
                         </div>
                         <div class="contact-details">
                             <h3>Follow Us</h3>
-                            <div class="social-links">
+                            <div class="social-links" >
                                 <a href="#"><i class="fab fa-linkedin"></i></a>
                                 <a href="#"><i class="fab fa-twitter"></i></a>
                                 <a href="#"><i class="fab fa-facebook"></i></a>
@@ -775,6 +773,7 @@ nav ul li a:hover::after {
                         
                         <button type="submit" class="btn">Send Message</button>
                     </form>
+                                        
                 </div>
             </div>
         </div>
@@ -784,7 +783,7 @@ nav ul li a:hover::after {
     <section class="map-section">
         <div class="container">
             <div class="map-container">
-              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d246160.3357050248!2d28.178934881149555!3d-15.416769097885089!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1940f37d3cbcaa49%3A0xd0d093c1462013eb!2sLusaka!5e0!3m2!1sen!2szm!4v1758527172012!5m2!1sen!2szm" allowfullscreen="" loading="lazy" ></iframe>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d183.39384099836184!2d28.348617782185812!3d-15.450109568079716!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e1!3m2!1sen!2szm!4v1767200236994!5m2!1sen!2szm" allowfullscreen="" loading="lazy" ></iframe>
             </div>
         </div>
     </section>
@@ -1131,6 +1130,60 @@ document.getElementById('contactForm').addEventListener('submit', function(e) {
                 item.classList.toggle('active');
             });
         });
+        (function () {
+            const params = new URLSearchParams(window.location.search);
+        
+            if (params.get('source') !== 'project') return;
+        
+            const projectTitle = params.get('title');
+            const service = params.get('service');
+        
+            const serviceSelect = document.getElementById('service');
+            const messageField = document.getElementById('message');
+        
+            // Auto-select service
+            if (service && serviceSelect) {
+                serviceSelect.value = service;
+            }
+        
+            // Pre-fill message
+            if (projectTitle && messageField) {
+                messageField.value =
+                    `Hello Fistra Engineering,\n\n` +
+                    `I am interested in starting a project similar to "${decodeURIComponent(projectTitle)}".\n\n` +
+                    `Please contact me to discuss scope, timeline, and requirements.\n\n` +
+                    `Regards.`;
+            }
+        })();
+        // ===== AUTO-PRESELECT SERVICE FROM URL =====
+        (function () {
+            const params = new URLSearchParams(window.location.search);
+        
+            const serviceParam = params.get('service');
+            const sourceParam  = params.get('source');
+        
+            const serviceSelect = document.getElementById('service');
+            const messageField  = document.getElementById('message');
+        
+            // ---- Preselect service (allowed for service & project) ----
+            if (serviceParam && serviceSelect) {
+                serviceSelect.value = serviceParam;
+                serviceSelect.classList.add('auto-selected');
+            }
+        
+            // ---- Prefill message ONLY if source is service ----
+            if (sourceParam === 'service' && messageField && serviceSelect) {
+                const serviceName =
+                    serviceSelect.options[serviceSelect.selectedIndex]?.text || 'this service';
+        
+                messageField.value =
+                    `Hello Fistra Engineering,\n\n` +
+                    `I would like to request more information regarding ${serviceName}.\n\n` +
+                    `Please contact me to discuss the scope, timeline, and requirements.\n\n` +
+                    `Kind regards.`;
+            }
+        
+        })();
     </script>
 </body>
 </html>
