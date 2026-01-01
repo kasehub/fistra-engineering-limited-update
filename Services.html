@@ -101,7 +101,7 @@
         }
         
         /* Header & Navigation */
-header {
+#header {
     background-color: white;
     box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
     position: sticky;
@@ -871,7 +871,9 @@ nav ul li a:hover::after {
                             <li>Expert reports and
                                 proof checks.</li>
                         </ul>
-                        <a href="#structural" class="btn btn-outline">Learn More</a>
+                        <button class="btn btn-outline service-btn" data-service="structural">
+                            Learn More
+                        </button>
                     </div>
                 </div>
                 <div class="service-card">
@@ -888,7 +890,10 @@ nav ul li a:hover::after {
                             <li>Fire Suppression & Detection Systems</li>
                             <li>Training & Capacity Building</li>
                         </ul>
-                        <a href="#fire" class="btn btn-outline">Learn More</a>
+                        <button class="btn btn-outline service-btn" data-service="fire">
+                            Learn More
+                        </button>
+                        
                     </div>
                 </div>
                 <div class="service-card">
@@ -905,7 +910,9 @@ nav ul li a:hover::after {
                             <li>Chemical Engineering - process safety</li>
                             <li>Project Management & Supervision</li>
                         </ul>
-                        <a href="#multidisciplinary" class="btn btn-outline">Learn More</a>
+                        <button class="btn btn-outline service-btn" data-service="multidisciplinary">
+                            Learn More
+                        </button>                        
                     </div>
                 </div>
                 <div class="service-card">
@@ -922,7 +929,10 @@ nav ul li a:hover::after {
                             <li>Safety compliance audits</li>
                             <li>Failure prevention strategies</li>
                         </ul>
-                        <a href="#forensic" class="btn btn-outline">Learn More</a>
+                        <button class="btn btn-outline service-btn" data-service="forensic">
+                            Learn More
+                        </button>
+                        
                     </div>
                 </div>
                 <div class="service-card">
@@ -939,7 +949,9 @@ nav ul li a:hover::after {
                             <li>Engineering input for research</li>
                             <li>Industry-academia collaboration</li>
                         </ul>
-                        <a href="#research" class="btn btn-outline">Learn More</a>
+                        <button class="btn btn-outline service-btn" data-service="research">
+                            Learn More
+                        </button>
                     </div>
                 </div>
                 <div class="service-card">
@@ -956,7 +968,9 @@ nav ul li a:hover::after {
                             <li>Code compliance</li>
                             <li>Technical audits</li>
                         </ul>
-                        <a href="#consulting" class="btn btn-outline">Learn More</a>
+                        <button class="btn btn-outline service-btn" data-service="consulting">
+                            Learn More
+                        </button>
                     </div>
                 </div>
             </div>
@@ -980,7 +994,10 @@ nav ul li a:hover::after {
                         <li>Building Information Modelling (BIM)</li>
                         <li>Construction documentation and oversight</li>
                     </ul>
-                    <a href="Contact.html" class="btn">Request a Consultation</a>
+                    <a href="Contact.html?source=service&service=structural" class="btn">
+                        Request a Consultation
+                    </a>
+
                 </div>
                 <div class="service-detail-image">
                     <img src="assets/3.jpg" alt="Structural Engineering">
@@ -1009,7 +1026,9 @@ nav ul li a:hover::after {
                         <li>Performance-based design approaches</li>
                         <li>Training & Capacity Building in Fire Safety</li>
                     </ul>
-                    <a href="Contact.html" class="btn">Discuss Your Project</a>
+                    <a href="Contact.html?source=service&service=fire" class="btn">
+                        Discuss Your Project
+                    </a>
                 </div>
             </div>
         </div>
@@ -1055,6 +1074,67 @@ nav ul li a:hover::after {
             <a href="Contact.html" class="btn">Get in Touch</a>
         </div>
     </section>
+    <!-- services modals -->
+    <div class="modal service-modal" id="service-structural">
+        <div class="modal-content">
+            <div class="close-modal">&times;</div>
+    
+            <div class="modal-image">
+                <img src="assets/3.jpg" alt="Structural Engineering">
+            </div>
+    
+            <div class="modal-body">
+                <h2>Structural Engineering</h2>
+    
+                <p>
+                    Our structural engineering services cover analysis, design,
+                    rehabilitation, and verification of structures across
+                    residential, commercial, and infrastructure projects.
+                </p>
+    
+                <ul class="service-features">
+                    <li>Buildings, bridges & industrial structures</li>
+                    <li>Retrofitting & rehabilitation</li>
+                    <li>Structural assessments & proof checks</li>
+                    <li>BIM & construction oversight</li>
+                </ul>
+    
+                <a href="Contact.html?source=service&service=structural" class="btn">
+                    Request This Service
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="modal service-modal" id="service-fire">
+        <div class="modal-content">
+            <div class="close-modal">&times;</div>
+    
+            <div class="modal-image">
+                <img src="assets/66.jpg" alt="Fire Engineering">
+            </div>
+    
+            <div class="modal-body">
+                <h2>Fire Engineering</h2>
+    
+                <p>
+                    Performance-based fire safety engineering solutions designed
+                    to protect life, property, and critical infrastructure.
+                </p>
+    
+                <ul class="service-features">
+                    <li>Fire safety design (passive & active)</li>
+                    <li>Fire risk assessments & audits</li>
+                    <li>Evacuation modelling</li>
+                    <li>Fire suppression & detection systems</li>
+                </ul>
+    
+                <a href="Contact.html?source=service&service=fire" class="btn">
+                    Request This Service
+                </a>
+            </div>
+        </div>
+    </div>
+        
 
     <!-- Footer -->
     <div id="footer"></div>
@@ -1249,6 +1329,46 @@ nav ul li a:hover::after {
              imageObserver.observe(img);
          });
      }
+     // ===== SERVICE MODALS (ONE-TO-ONE) =====
+const serviceButtons = document.querySelectorAll('.service-btn');
+const serviceModals = document.querySelectorAll('.service-modal');
+
+// Open modal
+serviceButtons.forEach(btn => {
+    btn.addEventListener('click', () => {
+        const service = btn.dataset.service;
+        const modal = document.getElementById(`service-${service}`);
+
+        if (modal) {
+            modal.style.display = 'block';
+            document.body.style.overflow = 'hidden';
+        }
+    });
+});
+
+// Close modal
+serviceModals.forEach(modal => {
+    modal.querySelector('.close-modal').addEventListener('click', () => {
+        modal.style.display = 'none';
+        document.body.style.overflow = '';
+    });
+
+    modal.addEventListener('click', e => {
+        if (e.target === modal) {
+            modal.style.display = 'none';
+            document.body.style.overflow = '';
+        }
+    });
+});
+
+// ESC key support
+document.addEventListener('keydown', e => {
+    if (e.key === 'Escape') {
+        serviceModals.forEach(modal => modal.style.display = 'none');
+        document.body.style.overflow = '';
+    }
+});
+
     </script>
 </body>
 </html>
