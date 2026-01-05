@@ -14,6 +14,7 @@
     --light: #f8f9fa;
     --dark: #5f0c06;
     --gray: #7f8c8d;
+    --hover: #c0392b;
         }
         
         * {
@@ -50,7 +51,7 @@
         }
         
         .btn:hover {
-            background-color: #c0392b;
+            background-color: var(--hover);
             transform: translateY(-2px);
         }
         
@@ -109,7 +110,7 @@
     top: 0;
     z-index: 1000;
 }
-
+    
 .header-container {
     display: flex;
     justify-content: space-between;
@@ -186,7 +187,8 @@ nav ul li a.contact-nav-btn {
 }
 
 nav ul li a.contact-nav-btn:hover {
-    background-color: #c0392b;
+    background-color: var(--hover);
+    color: white;
 }
 
 nav ul li a.contact-nav-btn::after {
@@ -638,6 +640,55 @@ nav ul li a:hover::after {
             padding-top: 30px;
             border-top: 1px solid rgba(255, 255, 255, 0.1);
         }
+
+        /* ===== BLOG MODAL ===== */
+.modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.7);
+    z-index: 2000;
+    padding: 40px 20px;
+}
+
+.modal-content {
+    background: white;
+    max-width: 900px;
+    margin: auto;
+    border-radius: 8px;
+    overflow: hidden;
+    animation: fadeUp 0.3s ease;
+}
+
+.modal-image img {
+    width: 100%;
+    height: 350px;
+    object-fit: cover;
+}
+
+.modal-body {
+    padding: 30px;
+}
+
+.modal-body h2 {
+    color: var(--primary);
+    margin-bottom: 15px;
+}
+
+.close-modal {
+    position: absolute;
+    right: 20px;
+    top: 15px;
+    font-size: 30px;
+    cursor: pointer;
+    color: white;
+}
+
+@keyframes fadeUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
         
         /* Responsive Design */
         @media (max-width: 992px) {
@@ -829,7 +880,10 @@ nav ul li a:hover::after {
                                 <span class="blog-post-tag">Innovation</span>
                                 <span class="blog-post-tag">Safety</span>
                             </div>
-                            <a href="#" class="btn">Read More</a>
+                            <button class="btn blog-btn" data-blog="seismic">
+                                Read More
+                            </button>
+                            
                         </div>
                     </article>
                     
@@ -1016,6 +1070,40 @@ nav ul li a:hover::after {
         </div>
     </section>
 
+     <!-- modal for Blog Post Details -->
+    <div class="modal blog-modal" id="blog-seismic">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+    
+            <div class="modal-image">
+                <img src="https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc?ixlib=rb-4.0.3&auto=format&fit=crop&w=1500&q=80" alt="">
+            </div>
+    
+            <div class="modal-body">
+                <h2>Advances in Seismic Design for High-Rise Buildings</h2>
+    
+                <p>
+                    Seismic engineering has evolved significantly with the adoption of
+                    base isolation systems, tuned mass dampers, and performance-based
+                    design methodologies.
+                </p>
+    
+                <p>
+                    These systems reduce seismic demand, improve energy dissipation,
+                    and enhance occupant safety in high-rise structures located in
+                    earthquake-prone regions.
+                </p>
+    
+                <p>
+                    Modern structural codes now encourage nonlinear analysis and
+                    resilience-based design, ensuring buildings remain functional
+                    after seismic events.
+                </p>
+            </div>
+        </div>
+    </div>
+    
+
     <!-- Footer -->
     <div id="footer"></div>
 
@@ -1157,6 +1245,46 @@ nav ul li a:hover::after {
             alert('Thank you for subscribing to our newsletter!');
             this.reset();
         });
+        // ===== BLOG MODALS (READ MORE) =====
+const blogButtons = document.querySelectorAll('.blog-btn');
+const blogModals  = document.querySelectorAll('.blog-modal');
+
+// Open modal
+blogButtons.forEach(btn => {
+    btn.addEventListener('click', () => {
+        const blogId = btn.dataset.blog;
+        const modal = document.getElementById(`blog-${blogId}`);
+
+        if (modal) {
+            modal.style.display = 'block';
+            document.body.style.overflow = 'hidden';
+        }
+    });
+});
+
+// Close modal
+blogModals.forEach(modal => {
+    modal.querySelector('.close-modal').addEventListener('click', () => {
+        modal.style.display = 'none';
+        document.body.style.overflow = '';
+    });
+
+    modal.addEventListener('click', e => {
+        if (e.target === modal) {
+            modal.style.display = 'none';
+            document.body.style.overflow = '';
+        }
+    });
+});
+
+// ESC key support
+document.addEventListener('keydown', e => {
+    if (e.key === 'Escape') {
+        blogModals.forEach(m => m.style.display = 'none');
+        document.body.style.overflow = '';
+    }
+});
+
     </script>
 </body>
 </html>
