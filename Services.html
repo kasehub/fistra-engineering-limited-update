@@ -14,6 +14,7 @@
     --light: #f8f9fa;
     --dark: #5f0c06;
     --gray: #7f8c8d;
+    --hover:#bd6d2b;
         }
         
         * {
@@ -50,7 +51,7 @@
         }
         
         .btn:hover {
-            background-color: #c0392b;
+            background-color: var(--hover);
             transform: translateY(-2px);
         }
         
@@ -185,7 +186,8 @@ nav ul li a.contact-nav-btn {
 }
 
 nav ul li a.contact-nav-btn:hover {
-    background-color: #c0392b;
+    background-color: var(--hover);
+    color: white;
 }
 
 nav ul li a.contact-nav-btn::after {
@@ -574,6 +576,54 @@ nav ul li a:hover::after {
         .modal-meta i {
             color: var(--accent);
         }
+        /* Modal Image Slider */
+.slider {
+    position: relative;
+    height: 400px;
+    overflow: hidden;
+}
+
+.slider .slides img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+.slider .slides img.active {
+    opacity: 1;
+    z-index: 1;
+}
+
+.slider-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0,0,0,0.6);
+    color: #fff;
+    border: none;
+    width: 45px;
+    height: 45px;
+    font-size: 22px;
+    cursor: pointer;
+    border-radius: 50%;
+    z-index: 2;
+}
+
+.slider-btn.prev {
+    left: 15px;
+}
+
+.slider-btn.next {
+    right: 15px;
+}
+
+.slider-btn:hover {
+    background: var(--accent);
+}
         
         /* Stats Section */
         .stats {
@@ -908,7 +958,6 @@ nav ul li a:hover::after {
                             <li>Mechanical Engineering - HVAC & systems</li>
                             <li>Electrical Engineering - fire-safe systems</li>
                             <li>Chemical Engineering - process safety</li>
-                            <li>Project Management & Supervision</li>
                         </ul>
                         <button class="btn btn-outline service-btn" data-service="multidisciplinary">
                             Learn More
@@ -959,7 +1008,7 @@ nav ul li a:hover::after {
                         <i class="fas fa-clipboard-check"></i>
                     </div>
                     <div class="service-content">
-                        <h3>Consulting & Training</h3>
+                        <h3>Training</h3>
                         <p>Professional consulting and capacity building services.</p>
                         <ul class="service-features">
                             <li>Technical consulting</li>
@@ -1000,7 +1049,7 @@ nav ul li a:hover::after {
 
                 </div>
                 <div class="service-detail-image">
-                    <img src="assets/3.jpg" alt="Structural Engineering">
+                    <img src="assets/3.png" alt="Structural Engineering">
                 </div>
             </div>
         </div>
@@ -1080,7 +1129,7 @@ nav ul li a:hover::after {
             <div class="close-modal">&times;</div>
     
             <div class="modal-image">
-                <img src="assets/3.jpg" alt="Structural Engineering">
+                <img src="assets/3.png" alt="Structural Engineering">
             </div>
     
             <div class="modal-body">
@@ -1134,6 +1183,152 @@ nav ul li a:hover::after {
             </div>
         </div>
     </div>
+    <!-- multidisciplinary -->
+    <div class="modal service-modal" id="service-multidisciplinary">
+        <div class="modal-content">
+            <div class="close-modal">&times;</div>
+    
+            <div class="modal-image slider">
+                <div class="slides">
+                    <img src="assets/7.jpg" class="active" alt="mechanical engineering">
+                    <img src="assets/8.jpg" alt="electrical engineering">
+                    <img src="assets/9.jpeg" alt="chemical engineering">
+                    <img src="assets/10.jpg" alt="civil engineering">
+                </div>
+            
+                <button class="slider-btn prev">&#10094;</button>
+                <button class="slider-btn next">&#10095;</button>
+            </div>
+    
+            <div class="modal-body">
+                <h2>Mechanical Engineering</h2>
+    
+                <p>
+                    Comprehensive engineering solutions across multiple disciplines.
+                </p>
+    
+                <ul class="service-features">
+                    <li>HVAC system design and smoke control strategies</li>
+                    <li>Industrial machinery installation and safety compliance.</li>
+                    <li>Mechanical system failure analysis and redesign</li>
+                </ul>
+                <h2>Electrical Engineering</h2>
+    
+                <ul class="service-features">
+                    <li>Fire-safe electrical system design</li>
+                    <li>Emergency lighting and backup power systems.</li>
+                    <li>Electrical hazard analysis and protection systems</li>
+                </ul>
+                <h2>Chemical Engineering</h2>
+    
+                <ul class="service-features">
+                    <li>Process safety analysis and hazard mitigation</li>
+                    <li>Flammable and hazardous materials handling design</li>
+                    <li>Explosion risk assessment and mitigation strategies.</li>
+                </ul>
+                <h2>Civil Engineering</h2>
+    
+                <ul class="service-features">
+                    <li>Infrastructure planning and design</li>
+                    <li>Civil works supervision and quality assurance</li>
+                </ul>
+    
+                <a href="Contact.html?source=service&service=other" class="btn">
+                    Request This Service
+                </a>
+            </div>
+        </div>
+    </div>
+    <!-- forensic -->
+    <div class="modal service-modal" id="service-forensic">
+        <div class="modal-content">
+            <div class="close-modal">&times;</div>
+    
+            <div class="modal-image">
+                <img src="assets/Bridge+Collapse-1920w.webp" alt="Fire Engineering">
+            </div>
+    
+            <div class="modal-body">
+                <h2>Forensic Engineering</h2>
+    
+                <p>
+                    Expert investigation and analysis of structural failures and fire incidents.
+                </p>
+    
+                <ul class="service-features">
+                    <li>Structural failure analysis</li>
+                    <li>Fire incident investigation</li>
+                    <li>Expert witness services</li>
+                    <li>Safety compliance audits</li>
+                    <li>Failure prevention strategies</li>
+                </ul>
+    
+                <a href="Contact.html?source=service&service=forensic" class="btn">
+                    Request This Service
+                </a>
+            </div>
+        </div>
+    </div>
+    <!-- research -->
+    <div class="modal service-modal" id="service-research">
+        <div class="modal-content">
+            <div class="close-modal">&times;</div>
+    
+            <div class="modal-image">
+                <img src="assets/pexels-mikhail-nilov-6930426.jpg" alt="Fire Engineering">
+            </div>
+    
+            <div class="modal-body">
+                <h2>Research & Development</h2>
+    
+                <p>
+                    Innovative research in structural and fire engineering to develop new solutions.
+                </p>
+    
+                <ul class="service-features">
+                    <li>Writing Research Proposal</li>
+                    <li>Research Supervision</li>
+                    <li>Thesis and Dissertation guidance</li>
+                    <li>Engineering Input</li>
+                </ul>
+    
+                <a href="Contact.html?source=service&service=research" class="btn">
+                    Request This Service
+                </a>
+            </div>
+        </div>
+    </div>
+    <!-- consulting -->
+    <div class="modal service-modal" id="service-consulting">
+        <div class="modal-content">
+            <div class="close-modal">&times;</div>
+    
+            <div class="modal-image">
+                <img src="assets/confident-speaker-talking-pointing-whiteboard.jpg" alt="Fire Engineering">
+            </div>
+    
+            <div class="modal-body">
+                <h2>Training</h2>
+    
+                <p>
+                    Professional consulting and capacity building services.
+                </p>
+    
+                <ul class="service-features">
+                    <li>Technical consulting</li>
+                    <li>Training programs</li>
+                    <li>Capacity building</li>
+                    <li>Code compliance</li>
+                    <li>Technical audits</li>
+                </ul>
+    
+                <a href="Contact.html?source=service&service=research" class="btn">
+                    Request This Service
+                </a>
+            </div>
+        </div>
+    </div>
+
         
 
     <!-- Footer -->
@@ -1368,6 +1563,56 @@ document.addEventListener('keydown', e => {
         document.body.style.overflow = '';
     }
 });
+// ===== MODAL IMAGE SLIDER (UPDATED & WORKING) =====
+function initSliders() {
+    document.querySelectorAll('.slider').forEach(slider => {
+        const images = slider.querySelectorAll('img');
+        const prevBtn = slider.querySelector('.prev');
+        const nextBtn = slider.querySelector('.next');
+
+        if (!images.length || !prevBtn || !nextBtn) return;
+
+        let currentIndex = 0;
+
+        // Reset slider on open
+        images.forEach(img => img.classList.remove('active'));
+        images[0].classList.add('active');
+
+        prevBtn.onclick = e => {
+            e.stopPropagation();
+            currentIndex = (currentIndex - 1 + images.length) % images.length;
+            updateSlide();
+        };
+
+        nextBtn.onclick = e => {
+            e.stopPropagation();
+            currentIndex = (currentIndex + 1) % images.length;
+            updateSlide();
+        };
+
+        function updateSlide() {
+            images.forEach(img => img.classList.remove('active'));
+            images[currentIndex].classList.add('active');
+        }
+    });
+}
+
+// ===== INIT SLIDER WHEN SERVICE MODAL OPENS =====
+document.querySelectorAll('.service-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+        const service = btn.dataset.service;
+        const modal = document.getElementById(`service-${service}`);
+
+        if (!modal) return;
+
+        modal.style.display = 'block';
+        document.body.style.overflow = 'hidden';
+
+        // Init slider AFTER modal becomes visible
+        setTimeout(initSliders, 50);
+    });
+});
+
 
     </script>
 </body>
